@@ -14,9 +14,38 @@
 		19731BC21E0066EE0074216F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19731BC01E0066EE0074216F /* LaunchScreen.storyboard */; };
 		19731BCD1E0066EE0074216F /* ArchitectureSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731BCC1E0066EE0074216F /* ArchitectureSampleTests.swift */; };
 		19731BD81E0066EE0074216F /* ArchitectureSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731BD71E0066EE0074216F /* ArchitectureSampleUITests.swift */; };
+		1A1FC00D3EB871F5D4328904 /* GithubEventsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE4A2C37EE20E3C0E915DD /* GithubEventsInteractorTests.swift */; };
+		235674D35386BE7A515FCE5D /* GithubEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87522BBB39006E070F00A379 /* GithubEventsViewController.swift */; };
+		2519C2156C1CF4545A25C7E0 /* GithubEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA9744BBFEC5435BC7122D /* GithubEventsInteractor.swift */; };
+		2C124A546A7299AA83AF1F58 /* GithubEventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1901DC1016624B00E5CBC22 /* GithubEventsPresenter.swift */; };
+		3225183C00D560BE2D78D5CA /* GithubEventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36931CABE687A72DBCDFA3D8 /* GithubEventsRouter.swift */; };
+		390D295BDB89AD2F3E2890D3 /* GithubEventsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E926B3D69CC505EC99F21D /* GithubEventsViewInput.swift */; };
+		3B444FA271FC180CBDD11F20 /* GithubEventsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C94CBE3D96B4BA4BFA3C /* GithubEventsRouterInput.swift */; };
+		3CE349F6D190FDB07BE15C75 /* GithubEventsInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A3536488194A2D234A8C1 /* GithubEventsInitializer.swift */; };
+		4322F44538AA3CACE50B2845 /* GithubEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFA9744BBFEC5435BC7122D /* GithubEventsInteractor.swift */; };
+		495B07169AAD3718F1738A1A /* GithubEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87522BBB39006E070F00A379 /* GithubEventsViewController.swift */; };
+		500E8C9565AC642CE12534D6 /* GithubEventsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4A414EB751B92CA11D43A /* GithubEventsViewOutput.swift */; };
+		55E1B83E282F4E46A6CC777B /* GithubEventsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A710F92A71FBC635920E473 /* GithubEventsInteractorOutput.swift */; };
 		5737F57C6E04712BF2B7A3DA /* Pods_ArchitectureSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2000C084605F08B9D36A795 /* Pods_ArchitectureSample.framework */; };
+		64B657AEFCAE90043E806849 /* GithubEventsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B30350C1160289FAA6BCC7 /* GithubEventsConfigurator.swift */; };
+		677E32FDB5659ACFDE643BBC /* GithubEventsInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A3536488194A2D234A8C1 /* GithubEventsInitializer.swift */; };
+		6A1E70EB95ACA593ED05B3ED /* GithubEventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36931CABE687A72DBCDFA3D8 /* GithubEventsRouter.swift */; };
 		7D6F714C9BA50B00E589C9C8 /* Pods_ArchitectureSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B11659F1BA448C25AFF3176A /* Pods_ArchitectureSampleTests.framework */; };
+		8DA0CB2A31C00AE7B764C045 /* GithubEventsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C4A414EB751B92CA11D43A /* GithubEventsViewOutput.swift */; };
+		8E4376ACBD43C1270711D62B /* GithubEventsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D6C736A8F7B0130E0F15D1 /* GithubEventsRouterTests.swift */; };
+		92B6D496F8BC8E73DB98C79A /* GithubEventsConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A399F4D87B66D888A8F46 /* GithubEventsConfiguratorTests.swift */; };
+		99F7E0265349AE4BB401889E /* GithubEventsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263C3E0077109789B2D8BA8C /* GithubEventsInteractorInput.swift */; };
+		9BCDA1CBF6A322E108F35F57 /* GithubEventsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C003617775F06E2DFCC5EF /* GithubEventsPresenterTests.swift */; };
+		A068204F00D5E9ADB8D3EAA1 /* GithubEventsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A710F92A71FBC635920E473 /* GithubEventsInteractorOutput.swift */; };
+		A2DCAB5B13B572B423532B6D /* GithubEventsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94466CE12112AD442FA5C1 /* GithubEventsModuleInput.swift */; };
+		AA1291A427ACD779E83EB953 /* GithubEventsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94466CE12112AD442FA5C1 /* GithubEventsModuleInput.swift */; };
+		BB2F64C86D755E739D72A5AD /* GithubEventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1901DC1016624B00E5CBC22 /* GithubEventsPresenter.swift */; };
+		BFFA69F8BFE9D52B59C3EAA3 /* GithubEventsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F29E9AE3EC7AF14EE96D649 /* GithubEventsViewTests.swift */; };
+		C4471A14B36EFB0CA8D2F6D1 /* GithubEventsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E926B3D69CC505EC99F21D /* GithubEventsViewInput.swift */; };
 		D0FD66240F97C7294344AB3B /* Pods_ArchitectureSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C841D5E45996424EB6313F4A /* Pods_ArchitectureSampleUITests.framework */; };
+		D6398A011D35436B349FF3FE /* GithubEventsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C94CBE3D96B4BA4BFA3C /* GithubEventsRouterInput.swift */; };
+		DDE813E741AA63212AA5E77B /* GithubEventsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263C3E0077109789B2D8BA8C /* GithubEventsInteractorInput.swift */; };
+		E2653D841392BD51CFE61AA0 /* GithubEventsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B30350C1160289FAA6BCC7 /* GithubEventsConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F29E9AE3EC7AF14EE96D649 /* GithubEventsViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsViewTests.swift; sourceTree = "<group>"; };
 		19731BB41E0066EE0074216F /* ArchitectureSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchitectureSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19731BB71E0066EE0074216F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19731BB91E0066EE0074216F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,13 +80,29 @@
 		19731BD31E0066EE0074216F /* ArchitectureSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitectureSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19731BD71E0066EE0074216F /* ArchitectureSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureSampleUITests.swift; sourceTree = "<group>"; };
 		19731BD91E0066EE0074216F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19D6C736A8F7B0130E0F15D1 /* GithubEventsRouterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsRouterTests.swift; sourceTree = "<group>"; };
+		263C3E0077109789B2D8BA8C /* GithubEventsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsInteractorInput.swift; sourceTree = "<group>"; };
+		2A710F92A71FBC635920E473 /* GithubEventsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsInteractorOutput.swift; sourceTree = "<group>"; };
+		36931CABE687A72DBCDFA3D8 /* GithubEventsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsRouter.swift; sourceTree = "<group>"; };
+		3AFE4A2C37EE20E3C0E915DD /* GithubEventsInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsInteractorTests.swift; sourceTree = "<group>"; };
+		492A399F4D87B66D888A8F46 /* GithubEventsConfiguratorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsConfiguratorTests.swift; sourceTree = "<group>"; };
 		5CF4202016C608B6447FB5C4 /* Pods-ArchitectureSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureSampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureSampleUITests/Pods-ArchitectureSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		705A3536488194A2D234A8C1 /* GithubEventsInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsInitializer.swift; sourceTree = "<group>"; };
+		7793C94CBE3D96B4BA4BFA3C /* GithubEventsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsRouterInput.swift; sourceTree = "<group>"; };
 		791F340310F69C69EBFCF418 /* Pods-ArchitectureSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureSampleTests/Pods-ArchitectureSampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		83E926B3D69CC505EC99F21D /* GithubEventsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsViewInput.swift; sourceTree = "<group>"; };
+		87522BBB39006E070F00A379 /* GithubEventsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsViewController.swift; sourceTree = "<group>"; };
 		880BB10F3FBC4CF1CC65171D /* Pods-ArchitectureSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureSample/Pods-ArchitectureSample.debug.xcconfig"; sourceTree = "<group>"; };
+		8EFA9744BBFEC5435BC7122D /* GithubEventsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsInteractor.swift; sourceTree = "<group>"; };
+		AB94466CE12112AD442FA5C1 /* GithubEventsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsModuleInput.swift; sourceTree = "<group>"; };
 		B11659F1BA448C25AFF3176A /* Pods_ArchitectureSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArchitectureSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2B30350C1160289FAA6BCC7 /* GithubEventsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsConfigurator.swift; sourceTree = "<group>"; };
 		B2BC4D471F8FB7AC818AC40C /* Pods-ArchitectureSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureSampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureSampleTests/Pods-ArchitectureSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B781774D4DD641D7FD56B464 /* Pods-ArchitectureSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureSampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureSampleUITests/Pods-ArchitectureSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C7C4A414EB751B92CA11D43A /* GithubEventsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsViewOutput.swift; sourceTree = "<group>"; };
 		C841D5E45996424EB6313F4A /* Pods_ArchitectureSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArchitectureSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1901DC1016624B00E5CBC22 /* GithubEventsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsPresenter.swift; sourceTree = "<group>"; };
+		E2C003617775F06E2DFCC5EF /* GithubEventsPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsPresenterTests.swift; sourceTree = "<group>"; };
 		F2000C084605F08B9D36A795 /* Pods_ArchitectureSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArchitectureSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F664BAE005105DF54E9C52F5 /* Pods-ArchitectureSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureSample/Pods-ArchitectureSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +135,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12BCB67F776A9AA178A8E705 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				B2B30350C1160289FAA6BCC7 /* GithubEventsConfigurator.swift */,
+				705A3536488194A2D234A8C1 /* GithubEventsInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		1448888BD85B05365A437485 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DA136B4B2E8D26880A3DFF58 /* Modules */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		19731BAB1E0066EE0074216F = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +183,7 @@
 				19731BBE1E0066EE0074216F /* Assets.xcassets */,
 				19731BC01E0066EE0074216F /* LaunchScreen.storyboard */,
 				19731BC31E0066EE0074216F /* Info.plist */,
+				1448888BD85B05365A437485 /* Classes */,
 			);
 			path = ArchitectureSample;
 			sourceTree = "<group>";
@@ -129,6 +193,7 @@
 			children = (
 				19731BCC1E0066EE0074216F /* ArchitectureSampleTests.swift */,
 				19731BCE1E0066EE0074216F /* Info.plist */,
+				766BDE8A44CC8C5D10BDDAEA /* Modules */,
 			);
 			path = ArchitectureSampleTests;
 			sourceTree = "<group>";
@@ -140,6 +205,34 @@
 				19731BD91E0066EE0074216F /* Info.plist */,
 			);
 			path = ArchitectureSampleUITests;
+			sourceTree = "<group>";
+		};
+		20DDBEAD35E5461A12C4935E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB94466CE12112AD442FA5C1 /* GithubEventsModuleInput.swift */,
+				E1901DC1016624B00E5CBC22 /* GithubEventsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		41903372916C1210CB736313 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				263C3E0077109789B2D8BA8C /* GithubEventsInteractorInput.swift */,
+				2A710F92A71FBC635920E473 /* GithubEventsInteractorOutput.swift */,
+				8EFA9744BBFEC5435BC7122D /* GithubEventsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4CBEF9609E8733D4E8B6D59B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7793C94CBE3D96B4BA4BFA3C /* GithubEventsRouterInput.swift */,
+				36931CABE687A72DBCDFA3D8 /* GithubEventsRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		5CD7CD290326A4930CC98A03 /* Pods */ = {
@@ -155,6 +248,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		766BDE8A44CC8C5D10BDDAEA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8DA973B1AFF296EA47B1AFE8 /* GithubEvents */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		84B39118925D7D1903E205F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0F29E9AE3EC7AF14EE96D649 /* GithubEventsViewTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		884DDCCCD7626FDD6BAEAE54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +272,80 @@
 				C841D5E45996424EB6313F4A /* Pods_ArchitectureSampleUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DA973B1AFF296EA47B1AFE8 /* GithubEvents */ = {
+			isa = PBXGroup;
+			children = (
+				A1846B9E161E8B7CE06A8D8A /* Configurator */,
+				84B39118925D7D1903E205F5 /* View */,
+				D18EEBFF7DE63C8DB11DCE1C /* Interactor */,
+				C06F27FC1A1DCFFACDED9E79 /* Presenter */,
+				FC387B2AB7EB54D37F6D4C71 /* Router */,
+			);
+			path = GithubEvents;
+			sourceTree = "<group>";
+		};
+		A1846B9E161E8B7CE06A8D8A /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				492A399F4D87B66D888A8F46 /* GithubEventsConfiguratorTests.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		C06F27FC1A1DCFFACDED9E79 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E2C003617775F06E2DFCC5EF /* GithubEventsPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D18EEBFF7DE63C8DB11DCE1C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3AFE4A2C37EE20E3C0E915DD /* GithubEventsInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		DA136B4B2E8D26880A3DFF58 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F6C5F1E67EC64C03113F8998 /* GithubEvents */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DA89317DC32200ABC331345D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83E926B3D69CC505EC99F21D /* GithubEventsViewInput.swift */,
+				C7C4A414EB751B92CA11D43A /* GithubEventsViewOutput.swift */,
+				87522BBB39006E070F00A379 /* GithubEventsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6C5F1E67EC64C03113F8998 /* GithubEvents */ = {
+			isa = PBXGroup;
+			children = (
+				DA89317DC32200ABC331345D /* View */,
+				20DDBEAD35E5461A12C4935E /* Presenter */,
+				41903372916C1210CB736313 /* Interactor */,
+				4CBEF9609E8733D4E8B6D59B /* Router */,
+				12BCB67F776A9AA178A8E705 /* Configurator */,
+			);
+			path = GithubEvents;
+			sourceTree = "<group>";
+		};
+		FC387B2AB7EB54D37F6D4C71 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				19D6C736A8F7B0130E0F15D1 /* GithubEventsRouterTests.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +631,18 @@
 			files = (
 				19731BBA1E0066EE0074216F /* ViewController.swift in Sources */,
 				19731BB81E0066EE0074216F /* AppDelegate.swift in Sources */,
+				390D295BDB89AD2F3E2890D3 /* GithubEventsViewInput.swift in Sources */,
+				8DA0CB2A31C00AE7B764C045 /* GithubEventsViewOutput.swift in Sources */,
+				235674D35386BE7A515FCE5D /* GithubEventsViewController.swift in Sources */,
+				A2DCAB5B13B572B423532B6D /* GithubEventsModuleInput.swift in Sources */,
+				BB2F64C86D755E739D72A5AD /* GithubEventsPresenter.swift in Sources */,
+				DDE813E741AA63212AA5E77B /* GithubEventsInteractorInput.swift in Sources */,
+				55E1B83E282F4E46A6CC777B /* GithubEventsInteractorOutput.swift in Sources */,
+				2519C2156C1CF4545A25C7E0 /* GithubEventsInteractor.swift in Sources */,
+				3B444FA271FC180CBDD11F20 /* GithubEventsRouterInput.swift in Sources */,
+				6A1E70EB95ACA593ED05B3ED /* GithubEventsRouter.swift in Sources */,
+				E2653D841392BD51CFE61AA0 /* GithubEventsConfigurator.swift in Sources */,
+				677E32FDB5659ACFDE643BBC /* GithubEventsInitializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +651,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				19731BCD1E0066EE0074216F /* ArchitectureSampleTests.swift in Sources */,
+				C4471A14B36EFB0CA8D2F6D1 /* GithubEventsViewInput.swift in Sources */,
+				500E8C9565AC642CE12534D6 /* GithubEventsViewOutput.swift in Sources */,
+				495B07169AAD3718F1738A1A /* GithubEventsViewController.swift in Sources */,
+				AA1291A427ACD779E83EB953 /* GithubEventsModuleInput.swift in Sources */,
+				2C124A546A7299AA83AF1F58 /* GithubEventsPresenter.swift in Sources */,
+				99F7E0265349AE4BB401889E /* GithubEventsInteractorInput.swift in Sources */,
+				A068204F00D5E9ADB8D3EAA1 /* GithubEventsInteractorOutput.swift in Sources */,
+				4322F44538AA3CACE50B2845 /* GithubEventsInteractor.swift in Sources */,
+				D6398A011D35436B349FF3FE /* GithubEventsRouterInput.swift in Sources */,
+				3225183C00D560BE2D78D5CA /* GithubEventsRouter.swift in Sources */,
+				64B657AEFCAE90043E806849 /* GithubEventsConfigurator.swift in Sources */,
+				3CE349F6D190FDB07BE15C75 /* GithubEventsInitializer.swift in Sources */,
+				92B6D496F8BC8E73DB98C79A /* GithubEventsConfiguratorTests.swift in Sources */,
+				BFFA69F8BFE9D52B59C3EAA3 /* GithubEventsViewTests.swift in Sources */,
+				1A1FC00D3EB871F5D4328904 /* GithubEventsInteractorTests.swift in Sources */,
+				9BCDA1CBF6A322E108F35F57 /* GithubEventsPresenterTests.swift in Sources */,
+				8E4376ACBD43C1270711D62B /* GithubEventsRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +908,7 @@
 				19731BDE1E0066EE0074216F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19731BDF1E0066EE0074216F /* Build configuration list for PBXNativeTarget "ArchitectureSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -704,6 +917,7 @@
 				19731BE11E0066EE0074216F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19731BE21E0066EE0074216F /* Build configuration list for PBXNativeTarget "ArchitectureSampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -712,6 +926,7 @@
 				19731BE41E0066EE0074216F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
