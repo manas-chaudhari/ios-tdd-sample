@@ -7,6 +7,10 @@
 //
 
 class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, GithubEventsInteractorOutput {
+    
+    internal func foundEvents(events: [Any]) {
+    }
+
 
     weak var view: GithubEventsViewInput!
     var interactor: GithubEventsInteractorInput!

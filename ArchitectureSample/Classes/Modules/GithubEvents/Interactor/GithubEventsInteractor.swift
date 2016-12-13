@@ -8,7 +8,7 @@
 
 class GithubEventsInteractor: GithubEventsInteractorInput {
     internal func fetchEvents() {
-        
+        output.foundEvents(events: [])
     }
 
 

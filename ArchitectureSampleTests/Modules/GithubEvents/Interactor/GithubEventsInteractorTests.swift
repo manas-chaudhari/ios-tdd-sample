@@ -31,5 +31,9 @@ class GithubEventsInteractorTests: XCTestCase {
 
     class MockPresenter: GithubEventsInteractorOutput {
         var receivedEvents: [Any]? = nil
+        
+        func foundEvents(events: [Any]) {
+            receivedEvents = events
+        }
     }
 }
