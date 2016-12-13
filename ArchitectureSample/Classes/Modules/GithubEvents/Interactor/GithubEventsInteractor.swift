@@ -7,6 +7,10 @@
 //
 
 class GithubEventsInteractor: GithubEventsInteractorInput {
+    internal func fetchEvents() {
+        
+    }
+
 
     weak var output: GithubEventsInteractorOutput!
 

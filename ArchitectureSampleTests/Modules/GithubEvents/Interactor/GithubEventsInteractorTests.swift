@@ -19,8 +19,17 @@ class GithubEventsInteractorTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
+    func testFetchEmpty() {
+        let sut = GithubEventsInteractor()
+        let mockOutput = MockPresenter()
+        sut.output = mockOutput
+        
+        sut.fetchEvents()
+        XCTAssert(mockOutput.receivedEvents?.count == 0)
+    }
 
     class MockPresenter: GithubEventsInteractorOutput {
-
+        var receivedEvents: [Any]? = nil
     }
 }

@@ -21,6 +21,10 @@ class GithubEventsPresenterTest: XCTestCase {
     }
 
     class MockInteractor: GithubEventsInteractorInput {
+        internal func fetchEvents() {
+            
+        }
+
 
     }
 
