@@ -39,5 +39,26 @@ class GithubServiceSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("GithubService") {
+            describe("fetchEvents") {
+                let githubService = GithubService() // TODO: Mock provider
+                
+                it("should parse sample events") {
+                    let sampleEvents = [
+                        GithubEvent(id: 1, type: "WatchEvent"),
+                        GithubEvent(id: 2, type: "PushEvent")
+                    ]
+                    
+                    githubService.events { result in
+                        var parsed: [GithubEvent]? = nil
+                        if case .success(let data) = result {
+                            parsed = data
+                        }
+                        expect(parsed! == sampleEvents).to(beTruthy())
+                    }
+                }
+            }
+        }
     }
 }
