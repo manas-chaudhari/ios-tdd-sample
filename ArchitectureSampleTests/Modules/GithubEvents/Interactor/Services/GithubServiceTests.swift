@@ -7,31 +7,21 @@
 //
 
 import XCTest
+import Quick
+import Nimble
 
-class GithubServiceTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    // TODO: Use nested tests using Quick for better structure
-    func testGithubEventsWithDifferentIds_AreUnequal() {
-        let sut1 = GithubEvent(id: 1)
-        let sut2 = GithubEvent(id: 2)
-        
-        XCTAssert(sut1 != sut2)
-    }
-    
-    func testGithubEventsWithSameIds_AreEqual() {
-        let sut1 = GithubEvent(id: 1)
-        let sut2 = GithubEvent(id: 1)
-        
-        XCTAssert(sut1 == sut2)
+class GithubServiceSpec: QuickSpec {
+    override func spec() {
+        describe("GithubEvent") {
+            it("is equal to another with same id") {
+                expect(GithubEvent(id: 1) == GithubEvent(id: 1))
+                    .to(beTruthy())
+            }
+            
+            it("is not equal to another with different id") {
+                expect(GithubEvent(id: 5) == GithubEvent(id: 10))
+                    .toNot(beTruthy())
+            }
+        }
     }
 }
