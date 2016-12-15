@@ -15,7 +15,7 @@ struct GithubEvent: Equatable {
     let id: Int
     
     public static func ==(lhs: GithubEvent, rhs: GithubEvent) -> Bool {
-        return false
+        return lhs.id == rhs.id
     }
 }
 
