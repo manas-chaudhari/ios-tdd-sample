@@ -19,10 +19,10 @@ class GithubEventsInteractor: GithubEventsInteractorInput {
         githubService.events { (result) in
             switch result {
             case .success(let events):
-                output.foundEvents(events: events)
+                self.output.foundEvents(events: events)
                 
             case .failure(_):
-                output.errorInFetchEvents()
+                self.output.errorInFetchEvents()
             }
         }
     }
