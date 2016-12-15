@@ -11,10 +11,18 @@ import Moya
 import Result
 
 class GithubEventsInteractorTests: XCTestCase {
+    var sut: GithubEventsInteractor!
+    var mockOutput: MockPresenter!
+    var mockService: MockGithubService!
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        mockService = MockGithubService()
+        sut = GithubEventsInteractor(githubService: mockService)
+        mockOutput = MockPresenter()
+        sut.output = mockOutput
+        
     }
 
     override func tearDown() {
@@ -24,23 +32,19 @@ class GithubEventsInteractorTests: XCTestCase {
     
     func testFetchEvents() {
         let dummyEvents = [GithubEvent(id: 1), GithubEvent(id: 2)]
-        let mockService = MockGithubService(stubResult: .success(dummyEvents))
-        let sut = GithubEventsInteractor(githubService: mockService)
-        let mockOutput = MockPresenter()
-        sut.output = mockOutput
+        mockService.stubResult = .success(dummyEvents)
         
         sut.fetchEvents()
+        
         XCTAssert(mockOutput.receivedEvents! == dummyEvents)
         XCTAssert(mockOutput.receivedError == false)
     }
     
     func testFetchEventsError() {
-        let mockService = MockGithubService(stubResult: .failure(.underlying(MockError.mock)))
-        let sut = GithubEventsInteractor(githubService: mockService)
-        let mockOutput = MockPresenter()
-        sut.output = mockOutput
+        mockService.stubResult = .failure(.underlying(MockError.mock))
         
         sut.fetchEvents()
+        
         XCTAssert(mockOutput.receivedEvents == nil)
         XCTAssert(mockOutput.receivedError == true)
     }
@@ -58,8 +62,8 @@ class GithubEventsInteractorTests: XCTestCase {
         }
     }
     
-    struct MockGithubService: GithubServiceType {
-        let stubResult: Result<[GithubEvent], Moya.Error>
+    class MockGithubService: GithubServiceType {
+        var stubResult: Result<[GithubEvent], Moya.Error>!
         
         func events(completion: (Result<[GithubEvent], Moya.Error>) -> ()) {
             completion(stubResult)
