@@ -1,5 +1,5 @@
 //
-//  GithubEventTests.swift
+//  GithubServiceTests.swift
 //  ArchitectureSample
 //
 //  Created by Manas Chaudhari on 12/15/16.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class GithubEventTests: XCTestCase {
+class GithubServiceTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -19,4 +19,5 @@ class GithubEventTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
 }

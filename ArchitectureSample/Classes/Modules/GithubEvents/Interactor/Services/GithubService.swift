@@ -10,10 +10,16 @@ import UIKit
 import Moya
 import Result
 
+
+struct GithubEvent {
+    
+}
+
 protocol GithubServiceType {
     func events(completion: (Result<[GithubEvent], Moya.Error>) -> ())
 }
 
-struct GithubEvent {
-    
+class GithubService: GithubServiceType {
+    func events(completion: (Result<[GithubEvent], Moya.Error>) -> ()) {
+    }
 }

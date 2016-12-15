@@ -27,16 +27,11 @@ class GithubEventsModuleConfigurator {
         presenter.view = viewController
         presenter.router = router
 
-        let interactor = GithubEventsInteractor(githubService: FakeGithubService())
+        let interactor = GithubEventsInteractor(githubService: GithubService())
         interactor.output = presenter
 
         presenter.interactor = interactor
         viewController.output = presenter
-    }
-    
-    class FakeGithubService: GithubServiceType {
-        func events(completion: (Result<[GithubEvent], Moya.Error>) -> ()) {
-        }
     }
 
 }
