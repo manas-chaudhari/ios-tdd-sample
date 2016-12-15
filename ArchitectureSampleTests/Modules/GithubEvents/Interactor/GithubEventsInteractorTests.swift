@@ -9,46 +9,61 @@
 import XCTest
 import Moya
 import Result
+import Quick
+import Nimble
 
-class GithubEventsInteractorTests: XCTestCase {
-    var sut: GithubEventsInteractor!
-    var mockOutput: MockPresenter!
-    var mockService: MockGithubService!
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        mockService = MockGithubService()
-        sut = GithubEventsInteractor(githubService: mockService)
-        mockOutput = MockPresenter()
-        sut.output = mockOutput
+class GithubEventsInteractorTests: QuickSpec {
+    
+    override func spec() {
+        var sut: GithubEventsInteractor!
+        var mockOutput: MockPresenter!
+        var mockService: MockGithubService!
         
-    }
+        beforeEach {
+            mockService = MockGithubService()
+            sut = GithubEventsInteractor(githubService: mockService)
+            mockOutput = MockPresenter()
+            sut.output = mockOutput
+        }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+        describe("while fetching events") {
+            context("with service response of 2 events") {
+                let dummyEvents = [GithubEvent(id: 1), GithubEvent(id: 2)]
+                
+                beforeEach {
+                    mockService.stubResult = .success(dummyEvents)
+                    
+                    sut.fetchEvents()
+                }
+                
+                it("outputs the same 2 events") {
+                    expect(mockOutput.receivedEvents!).to(equal(dummyEvents))
+                }
+                
+                it("does not output error") {
+                    expect(mockOutput.receivedError).to(beFalsy())
+                }
+            }
+            
+            context("with service response of error") {
+                beforeEach {
+                    mockService.stubResult = .failure(.underlying(MockError.mock))
+                    
+                    sut.fetchEvents()
+                }
+                
+                it("outputs the error") {
+                    expect(mockOutput.receivedError).to(beTruthy())
+                }
+                
+                it("does not output any events") {
+                    expect(mockOutput.receivedEvents).to(beNil())
+                }
+            }
+        }
+        
     }
     
-    func testFetchEvents() {
-        let dummyEvents = [GithubEvent(id: 1), GithubEvent(id: 2)]
-        mockService.stubResult = .success(dummyEvents)
-        
-        sut.fetchEvents()
-        
-        XCTAssert(mockOutput.receivedEvents! == dummyEvents)
-        XCTAssert(mockOutput.receivedError == false)
-    }
-    
-    func testFetchEventsError() {
-        mockService.stubResult = .failure(.underlying(MockError.mock))
-        
-        sut.fetchEvents()
-        
-        XCTAssert(mockOutput.receivedEvents == nil)
-        XCTAssert(mockOutput.receivedError == true)
-    }
-
     class MockPresenter: GithubEventsInteractorOutput {
         var receivedEvents: [GithubEvent]? = nil
         var receivedError: Bool = false
