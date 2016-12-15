@@ -28,7 +28,7 @@ class GithubEventsInteractorTests: QuickSpec {
 
         describe("while fetching events") {
             context("with service response of 2 events") {
-                let dummyEvents = [GithubEvent(id: 1), GithubEvent(id: 2)]
+                let dummyEvents = [GithubEvent(id: 1, type: "A"), GithubEvent(id: 2, type: "B")]
                 
                 beforeEach {
                     mockService.stubResult = .success(dummyEvents)

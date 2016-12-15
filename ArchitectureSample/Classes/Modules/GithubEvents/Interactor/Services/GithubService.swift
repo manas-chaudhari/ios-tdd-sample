@@ -13,9 +13,11 @@ import Result
 
 struct GithubEvent: Equatable {
     let id: Int
-    
+    let type: String
+        
     public static func ==(lhs: GithubEvent, rhs: GithubEvent) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.id == rhs.id &&
+            lhs.type == rhs.type
     }
 }
 
