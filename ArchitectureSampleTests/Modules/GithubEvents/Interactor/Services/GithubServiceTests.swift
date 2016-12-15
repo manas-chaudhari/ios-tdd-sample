@@ -20,4 +20,11 @@ class GithubServiceTests: XCTestCase {
         super.tearDown()
     }
     
+    // TODO: Use nested tests using Quick for better structure
+    func testGithubEventsWithDifferentIds_AreUnequal() {
+        let sut1 = GithubEvent(id: 1)
+        let sut2 = GithubEvent(id: 2)
+        
+        XCTAssert(sut1 != sut2)
+    }
 }
