@@ -30,7 +30,7 @@ class GithubEventsInteractorTests: XCTestCase {
         sut.output = mockOutput
         
         sut.fetchEvents()
-        XCTAssert(mockOutput.receivedEvents?.count == dummyEvents.count)
+        XCTAssert(mockOutput.receivedEvents! == dummyEvents)
     }
 
     class MockPresenter: GithubEventsInteractorOutput {
