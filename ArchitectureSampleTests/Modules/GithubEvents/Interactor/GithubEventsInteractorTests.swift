@@ -31,14 +31,23 @@ class GithubEventsInteractorTests: XCTestCase {
         
         sut.fetchEvents()
         XCTAssert(mockOutput.receivedEvents! == dummyEvents)
+        XCTAssert(mockOutput.receivedError == false)
     }
     
     func testFetchEventsError() {
-        // Refactoring required to mock error
+        let mockService = MockGithubService(stubResult: .failure(.underlying(MockError.mock)))
+        let sut = GithubEventsInteractor(githubService: mockService)
+        let mockOutput = MockPresenter()
+        sut.output = mockOutput
+        
+        sut.fetchEvents()
+        XCTAssert(mockOutput.receivedEvents == nil)
+        XCTAssert(mockOutput.receivedError == true)
     }
 
     class MockPresenter: GithubEventsInteractorOutput {
         var receivedEvents: [GithubEvent]? = nil
+        var receivedError: Bool = false
         
         func foundEvents(events: [GithubEvent]) {
             receivedEvents = events
@@ -51,6 +60,10 @@ class GithubEventsInteractorTests: XCTestCase {
         func events(completion: (Result<[GithubEvent], Moya.Error>) -> ()) {
             completion(stubResult)
         }
+    }
+    
+    enum MockError: Swift.Error {
+        case mock
     }
     
 }
