@@ -8,7 +8,7 @@
 
 class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, GithubEventsInteractorOutput {
     
-    internal func foundEvents(events: [Any]) {
+    internal func foundEvents(events: [GithubEvent]) {
     }
 
 

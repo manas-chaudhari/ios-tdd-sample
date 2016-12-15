@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Moya
+import Result
 
 class GithubEventsInteractorTests: XCTestCase {
 
@@ -20,20 +22,34 @@ class GithubEventsInteractorTests: XCTestCase {
         super.tearDown()
     }
     
-    func testFetchEmpty() {
-        let sut = GithubEventsInteractor()
+    func testFetchEvents() {
+        let dummyEvents = [GithubEvent(), GithubEvent()]
+        let mockService = MockGithubService(dummyEvents)
+        let sut = GithubEventsInteractor(githubService: mockService)
         let mockOutput = MockPresenter()
         sut.output = mockOutput
         
         sut.fetchEvents()
-        XCTAssert(mockOutput.receivedEvents?.count == 0)
+        XCTAssert(mockOutput.receivedEvents?.count == dummyEvents.count)
     }
 
     class MockPresenter: GithubEventsInteractorOutput {
-        var receivedEvents: [Any]? = nil
+        var receivedEvents: [GithubEvent]? = nil
         
-        func foundEvents(events: [Any]) {
+        func foundEvents(events: [GithubEvent]) {
             receivedEvents = events
         }
     }
+    
+    class MockGithubService: GithubServiceType {
+        let stubEvents: [GithubEvent]
+        init(_ events: [GithubEvent]) {
+            self.stubEvents = events
+        }
+        
+        func events(completion: (Result<[GithubEvent], Moya.Error>) -> ()) {
+            completion(Result.success(stubEvents))
+        }
+    }
+    
 }

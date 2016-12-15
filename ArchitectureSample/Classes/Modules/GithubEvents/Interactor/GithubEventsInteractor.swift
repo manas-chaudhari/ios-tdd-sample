@@ -7,11 +7,19 @@
 //
 
 class GithubEventsInteractor: GithubEventsInteractorInput {
-    internal func fetchEvents() {
-        output.foundEvents(events: [])
-    }
-
 
     weak var output: GithubEventsInteractorOutput!
+    let githubService: GithubServiceType
+    
+    init(githubService: GithubServiceType) {
+        self.githubService = githubService
+    }
 
+    internal func fetchEvents() {
+        githubService.events { (result) in
+            if case .success(let events) = result {
+                output.foundEvents(events: events)
+            }
+        }
+    }
 }

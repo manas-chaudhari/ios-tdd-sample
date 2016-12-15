@@ -9,5 +9,5 @@
 import Foundation
 
 protocol GithubEventsInteractorOutput: class {
-    func foundEvents(events: [Any])
+    func foundEvents(events: [GithubEvent])
 }

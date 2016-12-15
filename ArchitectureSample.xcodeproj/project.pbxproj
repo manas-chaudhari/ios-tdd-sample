@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1902A81D1E02A266004EC54D /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902A81C1E02A266004EC54D /* GithubService.swift */; };
+		1902A81E1E02A266004EC54D /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902A81C1E02A266004EC54D /* GithubService.swift */; };
+		1902A8201E02A865004EC54D /* GithubEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902A81F1E02A865004EC54D /* GithubEventTests.swift */; };
 		19731BB81E0066EE0074216F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731BB71E0066EE0074216F /* AppDelegate.swift */; };
 		19731BBA1E0066EE0074216F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731BB91E0066EE0074216F /* ViewController.swift */; };
 		19731BBD1E0066EE0074216F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19731BBB1E0066EE0074216F /* Main.storyboard */; };
@@ -67,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		0F29E9AE3EC7AF14EE96D649 /* GithubEventsViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GithubEventsViewTests.swift; sourceTree = "<group>"; };
+		1902A81C1E02A266004EC54D /* GithubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubService.swift; path = Services/GithubService.swift; sourceTree = "<group>"; };
+		1902A81F1E02A865004EC54D /* GithubEventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubEventTests.swift; sourceTree = "<group>"; };
 		19731BB41E0066EE0074216F /* ArchitectureSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchitectureSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19731BB71E0066EE0074216F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19731BB91E0066EE0074216F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +157,14 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		1902A81B1E02A249004EC54D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1902A81C1E02A266004EC54D /* GithubService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		19731BAB1E0066EE0074216F = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +232,7 @@
 		41903372916C1210CB736313 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				1902A81B1E02A249004EC54D /* Services */,
 				263C3E0077109789B2D8BA8C /* GithubEventsInteractorInput.swift */,
 				2A710F92A71FBC635920E473 /* GithubEventsInteractorOutput.swift */,
 				8EFA9744BBFEC5435BC7122D /* GithubEventsInteractor.swift */,
@@ -306,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				3AFE4A2C37EE20E3C0E915DD /* GithubEventsInteractorTests.swift */,
+				1902A81F1E02A865004EC54D /* GithubEventTests.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -637,6 +652,7 @@
 				A2DCAB5B13B572B423532B6D /* GithubEventsModuleInput.swift in Sources */,
 				BB2F64C86D755E739D72A5AD /* GithubEventsPresenter.swift in Sources */,
 				DDE813E741AA63212AA5E77B /* GithubEventsInteractorInput.swift in Sources */,
+				1902A81D1E02A266004EC54D /* GithubService.swift in Sources */,
 				55E1B83E282F4E46A6CC777B /* GithubEventsInteractorOutput.swift in Sources */,
 				2519C2156C1CF4545A25C7E0 /* GithubEventsInteractor.swift in Sources */,
 				3B444FA271FC180CBDD11F20 /* GithubEventsRouterInput.swift in Sources */,
@@ -650,10 +666,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1902A81E1E02A266004EC54D /* GithubService.swift in Sources */,
 				19731BCD1E0066EE0074216F /* ArchitectureSampleTests.swift in Sources */,
 				C4471A14B36EFB0CA8D2F6D1 /* GithubEventsViewInput.swift in Sources */,
 				500E8C9565AC642CE12534D6 /* GithubEventsViewOutput.swift in Sources */,
 				495B07169AAD3718F1738A1A /* GithubEventsViewController.swift in Sources */,
+				1902A8201E02A865004EC54D /* GithubEventTests.swift in Sources */,
 				AA1291A427ACD779E83EB953 /* GithubEventsModuleInput.swift in Sources */,
 				2C124A546A7299AA83AF1F58 /* GithubEventsPresenter.swift in Sources */,
 				99F7E0265349AE4BB401889E /* GithubEventsInteractorInput.swift in Sources */,

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Result
+import Moya
 
 class GithubEventsModuleConfigurator {
 
@@ -25,11 +27,16 @@ class GithubEventsModuleConfigurator {
         presenter.view = viewController
         presenter.router = router
 
-        let interactor = GithubEventsInteractor()
+        let interactor = GithubEventsInteractor(githubService: FakeGithubService())
         interactor.output = presenter
 
         presenter.interactor = interactor
         viewController.output = presenter
+    }
+    
+    class FakeGithubService: GithubServiceType {
+        func events(completion: (Result<[GithubEvent], Moya.Error>) -> ()) {
+        }
     }
 
 }
