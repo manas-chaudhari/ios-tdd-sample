@@ -52,6 +52,10 @@ class GithubEventsInteractorTests: XCTestCase {
         func foundEvents(events: [GithubEvent]) {
             receivedEvents = events
         }
+        
+        func errorInFetchEvents() {
+            receivedError = true
+        }
     }
     
     struct MockGithubService: GithubServiceType {

@@ -10,4 +10,5 @@ import Foundation
 
 protocol GithubEventsInteractorOutput: class {
     func foundEvents(events: [GithubEvent])
+    func errorInFetchEvents()
 }

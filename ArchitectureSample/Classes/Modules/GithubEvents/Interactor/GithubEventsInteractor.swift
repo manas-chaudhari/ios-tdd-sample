@@ -17,8 +17,12 @@ class GithubEventsInteractor: GithubEventsInteractorInput {
 
     internal func fetchEvents() {
         githubService.events { (result) in
-            if case .success(let events) = result {
+            switch result {
+            case .success(let events):
                 output.foundEvents(events: events)
+                
+            case .failure(_):
+                output.errorInFetchEvents()
             }
         }
     }

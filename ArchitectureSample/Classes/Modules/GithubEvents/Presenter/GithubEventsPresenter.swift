@@ -7,6 +7,8 @@
 //
 
 class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, GithubEventsInteractorOutput {
+    internal func errorInFetchEvents() {
+    }
     
     internal func foundEvents(events: [GithubEvent]) {
     }
