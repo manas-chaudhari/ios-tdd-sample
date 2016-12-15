@@ -23,7 +23,7 @@ class GithubEventsInteractorTests: XCTestCase {
     }
     
     func testFetchEvents() {
-        let dummyEvents = [GithubEvent(), GithubEvent()]
+        let dummyEvents = [GithubEvent(id: 1), GithubEvent(id: 2)]
         let mockService = MockGithubService(dummyEvents)
         let sut = GithubEventsInteractor(githubService: mockService)
         let mockOutput = MockPresenter()

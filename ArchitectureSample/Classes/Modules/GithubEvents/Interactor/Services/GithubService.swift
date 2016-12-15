@@ -11,8 +11,12 @@ import Moya
 import Result
 
 
-struct GithubEvent {
+struct GithubEvent: Equatable {
+    let id: Int
     
+    public static func ==(lhs: GithubEvent, rhs: GithubEvent) -> Bool {
+        return false
+    }
 }
 
 protocol GithubServiceType {
