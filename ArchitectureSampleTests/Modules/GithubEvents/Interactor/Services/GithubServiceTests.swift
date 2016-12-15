@@ -13,14 +13,26 @@ import Nimble
 class GithubServiceSpec: QuickSpec {
     override func spec() {
         describe("GithubEvent") {
-            it("is equal to another with same id") {
-                expect(GithubEvent(id: 1) == GithubEvent(id: 1))
-                    .to(beTruthy())
+            it("is equal to another with same values") {
+                let equalPairs = [
+                    (GithubEvent(id: 1), GithubEvent(id: 1)),
+                    (GithubEvent(id: 3), GithubEvent(id: 3)),
+                ]
+                
+                equalPairs.forEach { pair in
+                    expect(pair.0 == pair.1).to(beTruthy())
+                }
             }
             
-            it("is not equal to another with different id") {
-                expect(GithubEvent(id: 5) == GithubEvent(id: 10))
-                    .toNot(beTruthy())
+            it("is not equal to another with different values") {
+                let unEqualPairs = [
+                    (GithubEvent(id: 1), GithubEvent(id: 2)),
+                    (GithubEvent(id: 3), GithubEvent(id: 10)),
+                ]
+                
+                unEqualPairs.forEach { pair in
+                    expect(pair.0 == pair.1).toNot(beTruthy())
+                }
             }
         }
     }

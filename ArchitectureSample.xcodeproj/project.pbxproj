@@ -152,6 +152,7 @@
 		1448888BD85B05365A437485 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1902A8271E02CA46004EC54D /* Networking */,
 				DA136B4B2E8D26880A3DFF58 /* Modules */,
 			);
 			path = Classes;
@@ -171,6 +172,13 @@
 				1902A8251E02A9E6004EC54D /* GithubServiceTests.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		1902A8271E02CA46004EC54D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		19731BAB1E0066EE0074216F = {
