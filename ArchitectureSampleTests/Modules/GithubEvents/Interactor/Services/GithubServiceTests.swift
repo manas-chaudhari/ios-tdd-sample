@@ -27,4 +27,11 @@ class GithubServiceTests: XCTestCase {
         
         XCTAssert(sut1 != sut2)
     }
+    
+    func testGithubEventsWithSameIds_AreEqual() {
+        let sut1 = GithubEvent(id: 1)
+        let sut2 = GithubEvent(id: 1)
+        
+        XCTAssert(sut1 == sut2)
+    }
 }
