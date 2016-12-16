@@ -29,7 +29,7 @@ extension GithubEvent: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        id <- (map["id"], TransformOf<Int, String>(fromJSON: { Int($0!) }, toJSON: { $0.map { String($0) } }))
+        id <- (map["id"], JSONTransforms.stringToInt)
         type <- map["type"]
     }
 
@@ -41,9 +41,13 @@ protocol GithubServiceType {
 }
 
 class GithubService: GithubServiceType {
+    let provider: MoyaProvider<GithubApi>
+    
+    init(provider: MoyaProvider<GithubApi>) {
+        self.provider = provider
+    }
+    
     func events(completion: @escaping (Result<[GithubEvent], Moya.Error>) -> ()) {
-        let provider = MoyaProvider<GithubApi>(stubClosure: MoyaProvider.immediatelyStub)
-        
         provider.request(.events) { result in
             switch result {
             case .success(let response):

@@ -9,6 +9,7 @@
 import XCTest
 import Quick
 import Nimble
+import Moya
 
 class GithubServiceSpec: QuickSpec {
     override func spec() {
@@ -42,7 +43,7 @@ class GithubServiceSpec: QuickSpec {
         
         describe("GithubService") {
             describe("fetchEvents") {
-                let githubService = GithubService() // TODO: Mock provider
+                let githubService = GithubService(provider: MoyaProvider<GithubApi>(stubClosure: MoyaProvider.immediatelyStub))
                 
                 it("should parse sample events") {
                     let sampleEvents = [
@@ -50,13 +51,13 @@ class GithubServiceSpec: QuickSpec {
                         GithubEvent(id: 2, type: "PushEvent")
                     ]
                     
+                    var parsed: [GithubEvent]? = nil
                     githubService.events { result in
-                        var parsed: [GithubEvent]? = nil
                         if case .success(let data) = result {
                             parsed = data
                         }
-                        expect(parsed! == sampleEvents).to(beTruthy())
                     }
+                    expect(parsed).to(equal(sampleEvents))
                 }
             }
         }
