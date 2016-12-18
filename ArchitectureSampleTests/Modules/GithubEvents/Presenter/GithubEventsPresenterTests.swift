@@ -33,7 +33,7 @@ class GithubEventsPresenterSpec: QuickSpec {
     }
     
     override func spec() {
-        fcontext("When view is ready") {
+        context("When view is ready") {
             
             it("should fetch events") {
                 let sut = GithubEventsPresenter()

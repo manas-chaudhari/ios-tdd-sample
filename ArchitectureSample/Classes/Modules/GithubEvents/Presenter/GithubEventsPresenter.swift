@@ -19,6 +19,6 @@ class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, Gi
     var router: GithubEventsRouterInput!
 
     func viewIsReady() {
-
+        interactor.fetchEvents()
     }
 }
