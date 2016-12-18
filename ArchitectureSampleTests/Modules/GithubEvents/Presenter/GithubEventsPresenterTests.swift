@@ -6,23 +6,16 @@
 //  Copyright © 2016 Manas Chaudhari. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
 
-class GithubEventsPresenterTest: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+class GithubEventsPresenterSpec: QuickSpec {
 
     class MockInteractor: GithubEventsInteractorInput {
+        var fetchEventsCallCount = 0
+        
         internal func fetchEvents() {
-            
+            fetchEventsCallCount += 1
         }
 
 
@@ -36,6 +29,24 @@ class GithubEventsPresenterTest: XCTestCase {
 
         func setupInitialState() {
 
+        }
+    }
+    
+    override func spec() {
+        fcontext("When view is ready") {
+            
+            it("should fetch events") {
+                let sut = GithubEventsPresenter()
+                let mockView = MockViewController()
+                let mockInteractor = MockInteractor()
+                
+                sut.view = mockView
+                sut.interactor = mockInteractor
+                
+                sut.viewIsReady()
+                
+                expect(mockInteractor.fetchEventsCallCount).to(equal(1))
+            }
         }
     }
 }
