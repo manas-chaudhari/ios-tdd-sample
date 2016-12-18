@@ -30,22 +30,40 @@ class GithubEventsPresenterSpec: QuickSpec {
         func setupInitialState() {
 
         }
+        
+        var showEventsCallCount = 0
+        var showEventsLastInput: [GithubEvent]? = nil
+        
+        func showEvents(events: [GithubEvent]) {
+            showEventsCallCount += 1
+            showEventsLastInput = events
+        }
     }
     
     override func spec() {
-        context("When view is ready") {
-            
+        let sut = GithubEventsPresenter()
+        let mockView = MockViewController()
+        let mockInteractor = MockInteractor()
+        
+        sut.view = mockView
+        sut.interactor = mockInteractor
+        
+        context("when view is ready") {
             it("should fetch events") {
-                let sut = GithubEventsPresenter()
-                let mockView = MockViewController()
-                let mockInteractor = MockInteractor()
-                
-                sut.view = mockView
-                sut.interactor = mockInteractor
-                
                 sut.viewIsReady()
                 
                 expect(mockInteractor.fetchEventsCallCount).to(equal(1))
+            }
+        }
+        
+        context("after successful loading") {
+            it("should display events") {
+                let dummyEvents = [GithubEvent(id: 1, type: "")]
+                
+                sut.foundEvents(events: dummyEvents)
+                
+                expect(mockView.showEventsCallCount).to(equal(1))
+                expect(mockView.showEventsLastInput).to(equal(dummyEvents))
             }
         }
     }

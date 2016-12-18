@@ -22,4 +22,7 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     // MARK: GithubEventsViewInput
     func setupInitialState() {
     }
+    
+    func showEvents(events: [GithubEvent]) {
+    }
 }

@@ -11,6 +11,7 @@ class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, Gi
     }
     
     internal func foundEvents(events: [GithubEvent]) {
+        view.showEvents(events: events)
     }
 
 
