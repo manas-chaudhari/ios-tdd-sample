@@ -8,6 +8,7 @@
 
 class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, GithubEventsInteractorOutput {
     internal func errorInFetchEvents() {
+        view.showError()
     }
     
     internal func foundEvents(events: [GithubEvent]) {

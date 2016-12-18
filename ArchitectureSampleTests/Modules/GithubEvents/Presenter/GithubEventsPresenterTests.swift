@@ -38,6 +38,13 @@ class GithubEventsPresenterSpec: QuickSpec {
             showEventsCallCount += 1
             showEventsLastInput = events
         }
+        
+        
+        var showErrorCallCount = 0
+        
+        func showError() {
+            showErrorCallCount += 1
+        }
     }
     
     override func spec() {
@@ -64,6 +71,14 @@ class GithubEventsPresenterSpec: QuickSpec {
                 
                 expect(mockView.showEventsCallCount).to(equal(1))
                 expect(mockView.showEventsLastInput).to(equal(dummyEvents))
+            }
+        }
+        
+        context("on loading error") {
+            it("should display error") {
+                sut.errorInFetchEvents()
+                
+                expect(mockView.showErrorCallCount).to(equal(1))
             }
         }
     }
