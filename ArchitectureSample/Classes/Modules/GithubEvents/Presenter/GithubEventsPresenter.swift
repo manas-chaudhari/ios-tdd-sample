@@ -23,4 +23,8 @@ class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, Gi
     func viewIsReady() {
         interactor.fetchEvents()
     }
+    
+    func retryClicked() {
+        interactor.fetchEvents()
+    }
 }

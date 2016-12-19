@@ -48,12 +48,18 @@ class GithubEventsPresenterSpec: QuickSpec {
     }
     
     override func spec() {
-        let sut = GithubEventsPresenter()
-        let mockView = MockViewController()
-        let mockInteractor = MockInteractor()
+        var sut: GithubEventsPresenter!
+        var mockView: MockViewController!
+        var mockInteractor: MockInteractor!
         
-        sut.view = mockView
-        sut.interactor = mockInteractor
+        beforeEach {
+            sut = GithubEventsPresenter()
+            mockView = MockViewController()
+            mockInteractor = MockInteractor()
+            
+            sut.view = mockView
+            sut.interactor = mockInteractor
+        }
         
         context("when view is ready") {
             it("should fetch events") {
@@ -79,6 +85,14 @@ class GithubEventsPresenterSpec: QuickSpec {
                 sut.errorInFetchEvents()
                 
                 expect(mockView.showErrorCallCount).to(equal(1))
+            }
+        }
+        
+        context("on retry") {
+            it("should fetch events") {
+                sut.retryClicked()
+                
+                expect(mockInteractor.fetchEventsCallCount).to(equal(1))
             }
         }
     }
