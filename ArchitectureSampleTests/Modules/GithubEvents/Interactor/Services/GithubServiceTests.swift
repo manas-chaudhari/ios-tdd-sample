@@ -10,6 +10,7 @@ import XCTest
 import Quick
 import Nimble
 import Moya
+import Result
 
 class GithubServiceSpec: QuickSpec {
     override func spec() {
@@ -43,9 +44,10 @@ class GithubServiceSpec: QuickSpec {
         
         describe("GithubService") {
             describe("fetchEvents") {
-                let githubService = GithubService(provider: MoyaProvider<GithubApi>(stubClosure: MoyaProvider.immediatelyStub))
                 
                 it("should parse sample events") {
+                    let githubService = GithubService(provider: MoyaProvider<GithubApi>(stubClosure: MoyaProvider.immediatelyStub))
+                    
                     let sampleEvents = [
                         GithubEvent(id: 1, type: "WatchEvent"),
                         GithubEvent(id: 2, type: "PushEvent")
@@ -58,6 +60,23 @@ class GithubServiceSpec: QuickSpec {
                         }
                     }
                     expect(parsed).to(equal(sampleEvents))
+                }
+                
+                it("should return error on failure") {
+                    let fakeError = NSError(domain: "Network", code: 400, userInfo: nil)
+                    let githubService = GithubService(provider: MoyaProvider<GithubApi>(endpointClosure: { target in
+                        let endpoint = MoyaProvider.defaultEndpointMapping(target)
+                        return Endpoint(url: endpoint.url, sampleResponseClosure: { .networkError(fakeError) })
+                    }, stubClosure: MoyaProvider.immediatelyStub))
+                    
+                    var parsedError: Moya.Error? = nil
+                    githubService.events { result in
+                        if case .failure(let error) = result {
+                            parsedError = error
+                        }
+                    }
+                    
+                    expect(parsedError).toNot(beNil())
                 }
             }
         }

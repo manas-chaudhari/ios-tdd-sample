@@ -55,7 +55,8 @@ class GithubService: GithubServiceType {
                     completion(.success(events))
                 }
                 
-            default: break
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
         
