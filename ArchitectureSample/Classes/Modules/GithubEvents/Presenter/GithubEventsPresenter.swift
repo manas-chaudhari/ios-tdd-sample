@@ -7,24 +7,29 @@
 //
 
 class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, GithubEventsInteractorOutput {
-    internal func errorInFetchEvents() {
-        view.showError()
-    }
-    
-    internal func foundEvents(events: [GithubEvent]) {
-        view.showEvents(events: events)
-    }
-
 
     weak var view: GithubEventsViewInput!
     var interactor: GithubEventsInteractorInput!
     var router: GithubEventsRouterInput!
 
+    func errorInFetchEvents() {
+        view.showError()
+    }
+    
+    func foundEvents(events: [GithubEvent]) {
+        view.showEvents(events: events)
+    }
+
     func viewIsReady() {
-        interactor.fetchEvents()
+        fetchData()
     }
     
     func retryClicked() {
+        fetchData()
+    }
+    
+    private func fetchData() {
         interactor.fetchEvents()
+        view.showLoader()
     }
 }

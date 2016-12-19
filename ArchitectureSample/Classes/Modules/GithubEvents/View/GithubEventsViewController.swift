@@ -43,6 +43,9 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
         errorView.isHidden = false
     }
     
+    func showLoader() {
+    }
+    
     @IBAction func retryClicked(_ sender: Any) {
     }
 }

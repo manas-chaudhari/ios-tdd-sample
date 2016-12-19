@@ -17,4 +17,5 @@ protocol GithubEventsViewInput: class {
     
     func showEvents(events: [GithubEvent])
     func showError()
+    func showLoader()
 }

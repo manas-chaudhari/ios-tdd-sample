@@ -39,11 +39,14 @@ class GithubEventsPresenterSpec: QuickSpec {
             showEventsLastInput = events
         }
         
-        
         var showErrorCallCount = 0
-        
         func showError() {
             showErrorCallCount += 1
+        }
+        
+        var showLoaderCallCount = 0
+        func showLoader() {
+            showLoaderCallCount += 1
         }
     }
     
@@ -62,10 +65,16 @@ class GithubEventsPresenterSpec: QuickSpec {
         }
         
         context("when view is ready") {
-            it("should fetch events") {
+            beforeEach {
                 sut.viewIsReady()
-                
+            }
+            
+            it("should fetch events") {
                 expect(mockInteractor.fetchEventsCallCount).to(equal(1))
+            }
+            
+            it("should show loader") {
+                expect(mockView.showLoaderCallCount).to(equal(1))
             }
         }
         
@@ -89,10 +98,16 @@ class GithubEventsPresenterSpec: QuickSpec {
         }
         
         context("on retry") {
-            it("should fetch events") {
+            beforeEach {
                 sut.retryClicked()
-                
+            }
+            
+            it("should fetch events") {
                 expect(mockInteractor.fetchEventsCallCount).to(equal(1))
+            }
+            
+            it("should show loader") {
+                expect(mockView.showLoaderCallCount).to(equal(1))
             }
         }
     }
