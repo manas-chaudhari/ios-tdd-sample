@@ -14,6 +14,7 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var loaderView: UIActivityIndicatorView!
     
     
     var events: [GithubEvent]?
@@ -36,17 +37,23 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
         
         tableView.isHidden = false
         errorView.isHidden = true
+        loaderView.isHidden = true
     }
     
     func showError() {
         tableView.isHidden = true
         errorView.isHidden = false
+        loaderView.isHidden = true
     }
     
     func showLoader() {
+        tableView.isHidden = true
+        errorView.isHidden = true
+        loaderView.isHidden = false
     }
     
     @IBAction func retryClicked(_ sender: Any) {
+        output.retryClicked()
     }
 }
 

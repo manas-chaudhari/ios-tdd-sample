@@ -14,4 +14,6 @@ protocol GithubEventsViewOutput {
     */
 
     func viewIsReady()
+    
+    func retryClicked()
 }

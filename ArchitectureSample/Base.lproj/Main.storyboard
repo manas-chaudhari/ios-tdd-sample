@@ -22,6 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Pj-Oh-5Vc">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uer-Eg-Ey2" userLabel="Error View">
                                 <rect key="frame" x="166.5" y="308.5" width="172.5" height="50.5"/>
                                 <subviews>
@@ -67,15 +70,18 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Uer-Eg-Ey2" secondAttribute="trailing" constant="20" id="2va-er-9PR"/>
+                            <constraint firstItem="6Pj-Oh-5Vc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fhq-js-1ak"/>
                             <constraint firstItem="e6x-MI-dxS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="G4q-TX-hZ4"/>
                             <constraint firstItem="e6x-MI-dxS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JMq-gN-eYz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e6x-MI-dxS" secondAttribute="bottom" id="RK4-dS-uw6"/>
                             <constraint firstItem="Uer-Eg-Ey2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XFB-fa-RsW"/>
                             <constraint firstItem="e6x-MI-dxS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="byM-yU-YGg"/>
+                            <constraint firstItem="6Pj-Oh-5Vc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vhN-PD-QLT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="errorView" destination="Uer-Eg-Ey2" id="0t7-So-TAy"/>
+                        <outlet property="loaderView" destination="6Pj-Oh-5Vc" id="90V-Ti-iWn"/>
                         <outlet property="tableView" destination="e6x-MI-dxS" id="C8v-P5-Wpe"/>
                     </connections>
                 </viewController>
