@@ -11,6 +11,22 @@ import Nimble
 
 class GithubEventsViewTests: QuickSpec {
     override func spec() {
+        describe("Outlets") {
+            it("tableView should be connected") {
+                let sut = GithubEventsViewController()
+                sut.output = MockGithubEventsViewOutput()
+                _ = sut.view
+                
+                expect(sut.tableView).toNot(beNil())
+            }
+        }
+    }
+    
+    class MockGithubEventsViewOutput: GithubEventsViewOutput {
+        func viewIsReady() {
+        }
         
+        func retryClicked() {
+        }
     }
 }

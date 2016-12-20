@@ -9,6 +9,8 @@
 import UIKit
 
 class GithubEventsViewController: UIViewController, GithubEventsViewInput {
+    
+    @IBOutlet weak var tableView: UITableView!
 
     var output: GithubEventsViewOutput!
 
@@ -30,8 +32,5 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     }
     
     func showLoader() {
-    }
-    
-    @IBAction func retryClicked(_ sender: Any) {
     }
 }
