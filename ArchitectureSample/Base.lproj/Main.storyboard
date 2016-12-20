@@ -37,9 +37,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhZ-1i-zyl" userLabel="Retry Button">
                                         <rect key="frame" x="0.0" y="20.5" width="172.5" height="30"/>
                                         <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="retryClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j7N-mh-hCr"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -79,11 +76,6 @@
                             <constraint firstItem="6Pj-Oh-5Vc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vhN-PD-QLT"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="errorView" destination="Uer-Eg-Ey2" id="0t7-So-TAy"/>
-                        <outlet property="loaderView" destination="6Pj-Oh-5Vc" id="90V-Ti-iWn"/>
-                        <outlet property="tableView" destination="e6x-MI-dxS" id="C8v-P5-Wpe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="5VC-Op-xbx" customClass="GithubEventsModuleInitializer" customModule="ArchitectureSample" customModuleProvider="target">
