@@ -13,7 +13,7 @@
         <!--Githubevents View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GithubEventsViewController" customModule="ArchitectureSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GithubEventsViewController" id="BYZ-38-t0r" customClass="GithubEventsViewController" customModule="ArchitectureSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -76,6 +76,9 @@
                             <constraint firstItem="6Pj-Oh-5Vc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vhN-PD-QLT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="e6x-MI-dxS" id="3PH-Hg-e0S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="5VC-Op-xbx" customClass="GithubEventsModuleInitializer" customModule="ArchitectureSample" customModuleProvider="target">

@@ -13,7 +13,9 @@ class GithubEventsViewTests: QuickSpec {
     override func spec() {
         describe("Outlets") {
             it("tableView should be connected") {
-                let sut = GithubEventsViewController()
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GithubEventsViewController.self))
+                let sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController") as! GithubEventsViewController
+                
                 sut.output = MockGithubEventsViewOutput()
                 _ = sut.view
                 

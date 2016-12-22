@@ -14,6 +14,7 @@
 		1902A82A1E02DA68004EC54D /* GithubApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902A8281E02D279004EC54D /* GithubApi.swift */; };
 		1902A82C1E03F35F004EC54D /* JSONTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902A82B1E03F35F004EC54D /* JSONTransforms.swift */; };
 		1902A82D1E03F35F004EC54D /* JSONTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902A82B1E03F35F004EC54D /* JSONTransforms.swift */; };
+		192A938E1E0B82AD007BEFCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19731BBB1E0066EE0074216F /* Main.storyboard */; };
 		19731BB81E0066EE0074216F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731BB71E0066EE0074216F /* AppDelegate.swift */; };
 		19731BBA1E0066EE0074216F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731BB91E0066EE0074216F /* ViewController.swift */; };
 		19731BBD1E0066EE0074216F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19731BBB1E0066EE0074216F /* Main.storyboard */; };
@@ -513,6 +514,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192A938E1E0B82AD007BEFCF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
