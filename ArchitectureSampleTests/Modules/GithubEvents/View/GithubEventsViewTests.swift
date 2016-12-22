@@ -12,23 +12,21 @@ import Nimble
 class GithubEventsViewTests: QuickSpec {
     override func spec() {
         describe("Outlets") {
-            it("tableView should be connected") {
+            var sut: GithubEventsViewController!
+            
+            beforeEach {
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GithubEventsViewController.self))
-                let sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController") as! GithubEventsViewController
+                sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController") as! GithubEventsViewController
                 
                 sut.output = MockGithubEventsViewOutput()
                 _ = sut.view
-                
+            }
+            
+            it("tableView should be connected") {
                 expect(sut.tableView).toNot(beNil())
             }
             
             it("errorView should be connected") {
-                let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GithubEventsViewController.self))
-                let sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController") as! GithubEventsViewController
-                
-                sut.output = MockGithubEventsViewOutput()
-                _ = sut.view
-                
                 expect(sut.errorView).toNot(beNil())
             }
         }
