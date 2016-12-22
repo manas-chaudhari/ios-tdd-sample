@@ -12,6 +12,7 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var loaderView: UIView!
 
     var output: GithubEventsViewOutput!
 

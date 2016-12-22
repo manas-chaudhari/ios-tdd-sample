@@ -29,6 +29,10 @@ class GithubEventsViewTests: QuickSpec {
             it("errorView should be connected") {
                 expect(sut.errorView).toNot(beNil())
             }
+            
+            it("loaderView should be connected") {
+                expect(sut.loaderView).toNot(beNil())
+            }
         }
     }
     
