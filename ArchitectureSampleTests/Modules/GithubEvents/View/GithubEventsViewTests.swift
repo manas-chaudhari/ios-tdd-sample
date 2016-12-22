@@ -21,6 +21,16 @@ class GithubEventsViewTests: QuickSpec {
                 
                 expect(sut.tableView).toNot(beNil())
             }
+            
+            it("errorView should be connected") {
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GithubEventsViewController.self))
+                let sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController") as! GithubEventsViewController
+                
+                sut.output = MockGithubEventsViewOutput()
+                _ = sut.view
+                
+                expect(sut.errorView).toNot(beNil())
+            }
         }
     }
     

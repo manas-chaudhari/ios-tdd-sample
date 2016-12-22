@@ -11,6 +11,7 @@ import UIKit
 class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var errorView: UIView!
 
     var output: GithubEventsViewOutput!
 

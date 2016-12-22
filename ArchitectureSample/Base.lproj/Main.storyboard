@@ -77,6 +77,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorView" destination="Uer-Eg-Ey2" id="2Dp-i0-oTY"/>
                         <outlet property="tableView" destination="e6x-MI-dxS" id="3PH-Hg-e0S"/>
                     </connections>
                 </viewController>
