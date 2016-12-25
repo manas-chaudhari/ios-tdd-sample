@@ -76,13 +76,23 @@ class GithubEventsViewTests: QuickSpec {
             describe("showEvents") {
                 
                 beforeEach {
-                    sut.showEvents(events: [])
+                    let dummyEvents = [GithubEvent(id: 1, type: "T1"),
+                                       GithubEvent(id: 2, type: "T2")]
+                    sut.showEvents(events: dummyEvents)
                 }
                 
                 it("table should be visible") {
                     expect(sut.loaderView.isHidden).to(beTrue())
                     expect(sut.errorView.isHidden).to(beTrue())
                     expect(sut.tableView.isHidden).to(beFalse())
+                }
+                
+                it("number of sections should be 1") {
+                    expect(sut.tableView.numberOfSections).to(equal(1))
+                }
+                
+                it("number of rows should be equal to events count") {
+                    expect(sut.tableView.numberOfRows(inSection: 0)).to(equal(2))
                 }
             }
         }
