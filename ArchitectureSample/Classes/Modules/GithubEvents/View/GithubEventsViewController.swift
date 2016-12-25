@@ -38,6 +38,9 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     }
     
     func showLoader() {
+        errorView.isHidden = true
+        tableView.isHidden = true
+        loaderView.isHidden = false
     }
     
     // MARK: Actions

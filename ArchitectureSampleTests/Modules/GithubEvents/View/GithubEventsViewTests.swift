@@ -64,6 +64,14 @@ class GithubEventsViewTests: QuickSpec {
                 expect(sut.tableView.isHidden).to(beTrue())
                 expect(sut.loaderView.isHidden).to(beTrue())
             }
+            
+            it("loader should be shown") {
+                sut.showLoader()
+                
+                expect(sut.loaderView.isHidden).to(beFalse())
+                expect(sut.errorView.isHidden).to(beTrue())
+                expect(sut.tableView.isHidden).to(beTrue())
+            }
         }
     }
     
