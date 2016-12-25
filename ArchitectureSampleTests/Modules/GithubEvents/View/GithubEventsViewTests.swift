@@ -57,20 +57,33 @@ class GithubEventsViewTests: QuickSpec {
         }
         
         describe("View Inputs") {
-            it("error should be shown") {
+            it("error should be visible") {
                 sut.showError()
                 
+                expect(sut.loaderView.isHidden).to(beTrue())
                 expect(sut.errorView.isHidden).to(beFalse())
                 expect(sut.tableView.isHidden).to(beTrue())
-                expect(sut.loaderView.isHidden).to(beTrue())
             }
             
-            it("loader should be shown") {
+            it("loader should be visible") {
                 sut.showLoader()
                 
                 expect(sut.loaderView.isHidden).to(beFalse())
                 expect(sut.errorView.isHidden).to(beTrue())
                 expect(sut.tableView.isHidden).to(beTrue())
+            }
+            
+            describe("showEvents") {
+                
+                beforeEach {
+                    sut.showEvents(events: [])
+                }
+                
+                it("table should be visible") {
+                    expect(sut.loaderView.isHidden).to(beTrue())
+                    expect(sut.errorView.isHidden).to(beTrue())
+                    expect(sut.tableView.isHidden).to(beFalse())
+                }
             }
         }
     }

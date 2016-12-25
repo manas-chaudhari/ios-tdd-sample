@@ -29,6 +29,7 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     }
     
     func showEvents(events: [GithubEvent]) {
+        show(tableView)
     }
     
     func showError() {
