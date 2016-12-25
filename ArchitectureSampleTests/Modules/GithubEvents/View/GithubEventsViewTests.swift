@@ -55,6 +55,16 @@ class GithubEventsViewTests: QuickSpec {
                 expect(mockOutput.retryClickedCallCount).to(equal(1))
             }
         }
+        
+        describe("View Inputs") {
+            it("error should be shown") {
+                sut.showError()
+                
+                expect(sut.errorView.isHidden).to(beFalse())
+                expect(sut.tableView.isHidden).to(beTrue())
+                expect(sut.loaderView.isHidden).to(beTrue())
+            }
+        }
     }
     
     class MockGithubEventsViewOutput: GithubEventsViewOutput {
