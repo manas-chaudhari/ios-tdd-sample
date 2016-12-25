@@ -105,6 +105,15 @@ class GithubEventsViewTests: QuickSpec {
                         expect(sut.tableView.numberOfRows(inSection: 0)).to(equal(0))
                     }
                 }
+                
+                describe("tableView cell") {
+                    
+                    it("should be of type GithubEventCell") {
+                        let cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+                        
+                        expect(cell).to(beAnInstanceOf(GithubEventCell.self))
+                    }
+                }
             }
         }
     }
