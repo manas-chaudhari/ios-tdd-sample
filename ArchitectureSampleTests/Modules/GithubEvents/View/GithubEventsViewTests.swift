@@ -113,6 +113,19 @@ class GithubEventsViewTests: QuickSpec {
                         
                         expect(cell).to(beAnInstanceOf(GithubEventCell.self))
                     }
+                    
+                    describe("GithubEventCell") {
+                        var cell: GithubEventCell!
+                        
+                        beforeEach {
+                            cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+                                as! GithubEventCell
+                        }
+                        
+                        it("should display GithubEvent's type") {
+                            expect(cell.typeLabel.text).to(equal("Type: T1"))
+                        }
+                    }
                 }
             }
         }
