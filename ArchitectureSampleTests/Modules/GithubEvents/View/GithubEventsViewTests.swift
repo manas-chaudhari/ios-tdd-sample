@@ -87,18 +87,23 @@ class GithubEventsViewTests: QuickSpec {
                     expect(sut.tableView.isHidden).to(beFalse())
                 }
                 
-                it("number of sections should be 1") {
-                    expect(sut.tableView.numberOfSections).to(equal(1))
+                describe("numberOfSections") {
+                    it("should be 1") {
+                        expect(sut.tableView.numberOfSections).to(equal(1))
+                    }
                 }
                 
-                it("number of rows should be equal to events count") {
-                    expect(sut.tableView.numberOfRows(inSection: 0)).to(equal(2))
-                }
+                describe("numberOfRows") {
                 
-                it("number of rows should be equal to events count(0)") {
-                    sut.showEvents(events: [])
+                    it("should be equal to events count") {
+                        expect(sut.tableView.numberOfRows(inSection: 0)).to(equal(2))
+                    }
                     
-                    expect(sut.tableView.numberOfRows(inSection: 0)).to(equal(0))
+                    it("should be equal to events count(0)") {
+                        sut.showEvents(events: [])
+                        
+                        expect(sut.tableView.numberOfRows(inSection: 0)).to(equal(0))
+                    }
                 }
             }
         }
