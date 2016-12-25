@@ -74,10 +74,10 @@ class GithubEventsViewTests: QuickSpec {
             }
             
             describe("showEvents") {
+                let dummyEvents = [GithubEvent(id: 1, type: "T1"),
+                                   GithubEvent(id: 2, type: "T2")]
                 
                 beforeEach {
-                    let dummyEvents = [GithubEvent(id: 1, type: "T1"),
-                                       GithubEvent(id: 2, type: "T2")]
                     sut.showEvents(events: dummyEvents)
                 }
                 
@@ -93,6 +93,12 @@ class GithubEventsViewTests: QuickSpec {
                 
                 it("number of rows should be equal to events count") {
                     expect(sut.tableView.numberOfRows(inSection: 0)).to(equal(2))
+                }
+                
+                it("number of rows should be equal to events count(0)") {
+                    sut.showEvents(events: [])
+                    
+                    expect(sut.tableView.numberOfRows(inSection: 0)).to(equal(0))
                 }
             }
         }

@@ -16,11 +16,14 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     @IBOutlet weak var retryButton: UIButton!
 
     var output: GithubEventsViewOutput!
+    
+    var events: [GithubEvent] = []
 
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
+        tableView.dataSource = self
     }
 
 
@@ -30,6 +33,8 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     
     func showEvents(events: [GithubEvent]) {
         show(tableView)
+        self.events = events
+        tableView.reloadData()
     }
     
     func showError() {
@@ -50,5 +55,15 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     
     @IBAction func retryClicked() {
         output.retryClicked()
+    }
+}
+
+extension GithubEventsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return events.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
