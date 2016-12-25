@@ -32,6 +32,9 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     }
     
     func showError() {
+        errorView.isHidden = false
+        tableView.isHidden = true
+        loaderView.isHidden = true
     }
     
     func showLoader() {
