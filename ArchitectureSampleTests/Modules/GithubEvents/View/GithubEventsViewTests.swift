@@ -11,16 +11,20 @@ import Nimble
 
 class GithubEventsViewTests: QuickSpec {
     override func spec() {
-        describe("Outlets") {
-            var sut: GithubEventsViewController!
+        var sut: GithubEventsViewController!
+        var mockOutput: MockGithubEventsViewOutput!
+        
+        beforeEach {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GithubEventsViewController.self))
+            sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController") as! GithubEventsViewController
             
-            beforeEach {
-                let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GithubEventsViewController.self))
-                sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController") as! GithubEventsViewController
-                
-                sut.output = MockGithubEventsViewOutput()
-                _ = sut.view
-            }
+            mockOutput = MockGithubEventsViewOutput()
+            sut.output = mockOutput
+            
+            _ = sut.view
+        }
+        
+        describe("Outlets") {
             
             it("tableView should be connected") {
                 expect(sut.tableView).toNot(beNil())
@@ -33,14 +37,35 @@ class GithubEventsViewTests: QuickSpec {
             it("loaderView should be connected") {
                 expect(sut.loaderView).toNot(beNil())
             }
+            
+            it("retryButton should be connected") {
+                expect(sut.retryButton).toNot(beNil())
+            }
+        }
+        
+        describe("View Output") {
+            
+            it("viewIsReady should be called") {
+                expect(mockOutput.viewIsReadyCallCount).to(equal(1))
+            }
+            
+            it("retryClicked should be called") {
+                sut.retryButton.sendActions(for: .touchUpInside)
+                
+                expect(mockOutput.retryClickedCallCount).to(equal(1))
+            }
         }
     }
     
     class MockGithubEventsViewOutput: GithubEventsViewOutput {
+        var viewIsReadyCallCount = 0
         func viewIsReady() {
+            viewIsReadyCallCount += 1
         }
         
+        var retryClickedCallCount = 0
         func retryClicked() {
+            retryClickedCallCount += 1
         }
     }
 }

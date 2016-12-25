@@ -37,6 +37,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhZ-1i-zyl" userLabel="Retry Button">
                                         <rect key="frame" x="0.0" y="20.5" width="172.5" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="retryClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="ew0-tc-D92"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -48,11 +51,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xwW-cV-rCN" id="VW8-fp-9AS">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Hg-RN-9Y1">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="89"/>
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="89.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -79,6 +82,7 @@
                     <connections>
                         <outlet property="errorView" destination="Uer-Eg-Ey2" id="2Dp-i0-oTY"/>
                         <outlet property="loaderView" destination="6Pj-Oh-5Vc" id="DNe-dV-6Jw"/>
+                        <outlet property="retryButton" destination="vhZ-1i-zyl" id="H8S-Br-Y1H"/>
                         <outlet property="tableView" destination="e6x-MI-dxS" id="3PH-Hg-e0S"/>
                     </connections>
                 </viewController>

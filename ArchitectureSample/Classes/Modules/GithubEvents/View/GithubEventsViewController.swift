@@ -13,6 +13,7 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var loaderView: UIView!
+    @IBOutlet weak var retryButton: UIButton!
 
     var output: GithubEventsViewOutput!
 
@@ -34,5 +35,11 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     }
     
     func showLoader() {
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func retryClicked() {
+        output.retryClicked()
     }
 }
