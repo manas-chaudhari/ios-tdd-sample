@@ -32,15 +32,17 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
     }
     
     func showError() {
-        errorView.isHidden = false
-        tableView.isHidden = true
-        loaderView.isHidden = true
+        show(errorView)
     }
     
     func showLoader() {
-        errorView.isHidden = true
-        tableView.isHidden = true
-        loaderView.isHidden = false
+        show(loaderView)
+    }
+    
+    private func show(_ view: UIView) {
+        [tableView, errorView, loaderView].forEach { (candidateView) in
+            candidateView?.isHidden = candidateView != view
+        }
     }
     
     // MARK: Actions
