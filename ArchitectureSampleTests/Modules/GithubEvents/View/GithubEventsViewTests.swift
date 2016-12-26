@@ -54,6 +54,25 @@ class GithubEventsViewTests: QuickSpec {
                 
                 expect(mockOutput.retryClickedCallCount).to(equal(1))
             }
+            
+            describe("didSelectRow") {
+                let dummyEvents = [GithubEvent(id: 1, type: "T1"),
+                                   GithubEvent(id: 2, type: "T2")]
+                
+                beforeEach {
+                    sut.showEvents(events: dummyEvents)
+                }
+                
+                it("should be called when tableview cell is selected") {
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    sut.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+                    _ = sut.tableView.delegate?.tableView?(sut.tableView, willSelectRowAt: indexPath)
+                    sut.tableView.delegate?.tableView?(sut.tableView, didSelectRowAt: indexPath)
+                    
+                    expect(mockOutput.didSelectRowCallCount).to(equal(1))
+                    expect(mockOutput.didSelectRowLastPosition).to(equal(0))
+                }
+            }
         }
         
         describe("View Inputs") {
@@ -140,6 +159,13 @@ class GithubEventsViewTests: QuickSpec {
         var retryClickedCallCount = 0
         func retryClicked() {
             retryClickedCallCount += 1
+        }
+        
+        var didSelectRowCallCount = 0
+        var didSelectRowLastPosition: Int? = nil
+        func didSelectRow(at position: Int) {
+            didSelectRowCallCount += 1
+            didSelectRowLastPosition = position
         }
     }
 }

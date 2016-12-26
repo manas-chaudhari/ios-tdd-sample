@@ -28,6 +28,9 @@ class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, Gi
         fetchData()
     }
     
+    func didSelectRow(at position: Int) {
+    }
+    
     private func fetchData() {
         interactor.fetchEvents()
         view.showLoader()
