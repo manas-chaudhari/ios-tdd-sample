@@ -22,7 +22,11 @@ class GithubEventsPresenterSpec: QuickSpec {
     }
 
     class MockRouter: GithubEventsRouterInput {
-
+        var pushRepositoryDetailsPageCallCount = 0
+        
+        func pushRepositoryDetailsPage() {
+            pushRepositoryDetailsPageCallCount += 1
+        }
     }
 
     class MockViewController: GithubEventsViewInput {
@@ -54,14 +58,17 @@ class GithubEventsPresenterSpec: QuickSpec {
         var sut: GithubEventsPresenter!
         var mockView: MockViewController!
         var mockInteractor: MockInteractor!
+        var mockRouter: MockRouter!
         
         beforeEach {
             sut = GithubEventsPresenter()
             mockView = MockViewController()
             mockInteractor = MockInteractor()
+            mockRouter = MockRouter()
             
             sut.view = mockView
             sut.interactor = mockInteractor
+            sut.router = mockRouter
         }
         
         context("when view is ready") {
@@ -86,6 +93,16 @@ class GithubEventsPresenterSpec: QuickSpec {
                 
                 expect(mockView.showEventsCallCount).to(equal(1))
                 expect(mockView.showEventsLastInput).to(equal(dummyEvents))
+            }
+            
+            context("on row selection") {
+                beforeEach {
+                    sut.didSelectRow(at: 0)
+                }
+                
+                it("should navigate to repository page") {
+                    expect(mockRouter.pushRepositoryDetailsPageCallCount).to(equal(1))
+                }
             }
         }
         

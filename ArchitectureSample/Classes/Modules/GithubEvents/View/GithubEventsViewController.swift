@@ -76,7 +76,7 @@ extension GithubEventsViewController: UITableViewDataSource {
 }
 
 extension GithubEventsViewController: UITableViewDelegate {
-        
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         output.didSelectRow(at: indexPath.row)
     }
