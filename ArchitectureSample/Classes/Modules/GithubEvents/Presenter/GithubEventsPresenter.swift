@@ -11,12 +11,15 @@ class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, Gi
     weak var view: GithubEventsViewInput!
     var interactor: GithubEventsInteractorInput!
     var router: GithubEventsRouterInput!
+    
+    var events: [GithubEvent]?
 
     func errorInFetchEvents() {
         view.showError()
     }
     
     func foundEvents(events: [GithubEvent]) {
+        self.events = events
         view.showEvents(events: events)
     }
 
@@ -29,7 +32,9 @@ class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, Gi
     }
     
     func didSelectRow(at position: Int) {
-        router.pushEventDetailsPage(for: GithubEvent())
+        if let event = events?[position] {
+            router.pushEventDetailsPage(for: event)
+        }
     }
     
     private func fetchData() {
