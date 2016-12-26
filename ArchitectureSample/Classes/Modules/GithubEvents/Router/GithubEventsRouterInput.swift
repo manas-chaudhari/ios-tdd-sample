@@ -9,5 +9,5 @@
 import Foundation
 
 protocol GithubEventsRouterInput {
-    func pushRepositoryDetailsPage()
+    func pushEventDetailsPage()
 }

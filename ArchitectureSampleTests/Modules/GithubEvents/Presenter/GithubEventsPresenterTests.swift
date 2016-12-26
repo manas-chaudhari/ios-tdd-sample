@@ -22,10 +22,10 @@ class GithubEventsPresenterSpec: QuickSpec {
     }
 
     class MockRouter: GithubEventsRouterInput {
-        var pushRepositoryDetailsPageCallCount = 0
+        var pushEventDetailsPageCallCount = 0
         
-        func pushRepositoryDetailsPage() {
-            pushRepositoryDetailsPageCallCount += 1
+        func pushEventDetailsPage() {
+            pushEventDetailsPageCallCount += 1
         }
     }
 
@@ -101,7 +101,7 @@ class GithubEventsPresenterSpec: QuickSpec {
                 }
                 
                 it("should navigate to repository page") {
-                    expect(mockRouter.pushRepositoryDetailsPageCallCount).to(equal(1))
+                    expect(mockRouter.pushEventDetailsPageCallCount).to(equal(1))
                 }
             }
         }

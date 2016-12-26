@@ -8,6 +8,6 @@
 
 class GithubEventsRouter: GithubEventsRouterInput {
 
-    func pushRepositoryDetailsPage() {
+    func pushEventDetailsPage() {
     }
 }
