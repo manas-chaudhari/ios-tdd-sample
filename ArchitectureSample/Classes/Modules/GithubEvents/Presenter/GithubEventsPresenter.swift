@@ -29,7 +29,7 @@ class GithubEventsPresenter: GithubEventsModuleInput, GithubEventsViewOutput, Gi
     }
     
     func didSelectRow(at position: Int) {
-        router.pushEventDetailsPage()
+        router.pushEventDetailsPage(for: GithubEvent())
     }
     
     private func fetchData() {

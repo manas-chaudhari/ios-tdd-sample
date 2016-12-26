@@ -23,9 +23,11 @@ class GithubEventsPresenterSpec: QuickSpec {
 
     class MockRouter: GithubEventsRouterInput {
         var pushEventDetailsPageCallCount = 0
+        var pushEventDetailsPageLastEvent: GithubEvent?
         
-        func pushEventDetailsPage() {
+        func pushEventDetailsPage(for event: GithubEvent) {
             pushEventDetailsPageCallCount += 1
+            pushEventDetailsPageLastEvent = event
         }
     }
 
@@ -86,11 +88,13 @@ class GithubEventsPresenterSpec: QuickSpec {
         }
         
         context("after successful loading") {
-            it("should display events") {
-                let dummyEvents = [GithubEvent(id: 1, type: "")]
-                
+            let dummyEvents = [GithubEvent(id: 1, type: "")]
+            
+            beforeEach {
                 sut.foundEvents(events: dummyEvents)
-                
+            }
+            
+            it("should display events") {
                 expect(mockView.showEventsCallCount).to(equal(1))
                 expect(mockView.showEventsLastInput).to(equal(dummyEvents))
             }
@@ -102,6 +106,7 @@ class GithubEventsPresenterSpec: QuickSpec {
                 
                 it("should navigate to repository page") {
                     expect(mockRouter.pushEventDetailsPageCallCount).to(equal(1))
+                    expect(mockRouter.pushEventDetailsPageLastEvent).to(equal(dummyEvents[0]))
                 }
             }
         }
