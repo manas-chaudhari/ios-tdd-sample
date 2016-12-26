@@ -24,6 +24,7 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
         super.viewDidLoad()
         output.viewIsReady()
         tableView.dataSource = self
+        tableView.delegate = self
     }
 
 
@@ -71,5 +72,12 @@ extension GithubEventsViewController: UITableViewDataSource {
         cell.configure(forEvent: events[indexPath.row])
         
         return cell
+    }
+}
+
+extension GithubEventsViewController: UITableViewDelegate {
+        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        output.didSelectRow(at: indexPath.row)
     }
 }
