@@ -10,14 +10,7 @@ import UIKit
 
 class EventDetailsModuleConfigurator {
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
-
-        if let viewController = viewInput as? EventDetailsViewController {
-            configure(viewController: viewController)
-        }
-    }
-
-    private func configure(viewController: EventDetailsViewController) {
+    func configure(viewController: EventDetailsViewController) {
 
         let router = EventDetailsRouter()
 
