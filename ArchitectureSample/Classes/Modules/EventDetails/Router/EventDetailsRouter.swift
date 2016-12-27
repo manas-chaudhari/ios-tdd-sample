@@ -6,6 +6,15 @@
 //  Copyright © 2016 Manas Chaudhari. All rights reserved.
 //
 
-class EventDetailsRouter: EventDetailsRouterInput {
+import UIKit
 
+class EventDetailsRouter: EventDetailsRouterInput {
+    
+    class func pushDetailsPage(fromView: UINavigationController, for event: GithubEvent) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EventDetails") as! EventDetailsViewController
+        
+        EventDetailsModuleConfigurator(event: event).configure(viewController: vc)
+        
+        fromView.pushViewController(vc, animated: true)
+    }
 }

@@ -11,5 +11,6 @@ class GithubEventsRouter: GithubEventsRouterInput {
     var viewController: UIViewController!
 
     func pushEventDetailsPage(for event: GithubEvent) {
+        EventDetailsRouter.pushDetailsPage(fromView: viewController.navigationController!, for: event)
     }
 }
