@@ -23,6 +23,7 @@ class GithubEventsModuleConfigurator {
     func configure(viewController: GithubEventsViewController) {
 
         let router = GithubEventsRouter()
+        router.viewController = viewController
 
         let presenter = GithubEventsPresenter()
         presenter.view = viewController

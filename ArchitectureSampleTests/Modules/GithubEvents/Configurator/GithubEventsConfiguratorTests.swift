@@ -43,6 +43,10 @@ class GithubEventsModuleConfiguratorTest: QuickSpec {
                 expect(interactor).toNot(beNil())
                 expect(interactor?.output).toNot(beNil())
             }
+            
+            it("should setup router dependencies") {
+                expect(router?.viewController).toNot(beNil())
+            }
         }
     }
 }
