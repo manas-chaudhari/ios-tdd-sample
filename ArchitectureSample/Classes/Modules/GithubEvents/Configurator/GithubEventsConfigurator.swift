@@ -12,6 +12,7 @@ import Moya
 
 class GithubEventsModuleConfigurator {
 
+    // TODO: Remove this method and initialize app via router
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
 
         if let viewController = viewInput as? GithubEventsViewController {
@@ -19,7 +20,7 @@ class GithubEventsModuleConfigurator {
         }
     }
 
-    private func configure(viewController: GithubEventsViewController) {
+    func configure(viewController: GithubEventsViewController) {
 
         let router = GithubEventsRouter()
 
