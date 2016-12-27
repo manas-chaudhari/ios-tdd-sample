@@ -43,6 +43,10 @@ class EventDetailsModuleConfiguratorTests: QuickSpec {
                 expect(interactor).toNot(beNil())
                 expect(interactor?.output).toNot(beNil())
             }
+            
+            it("should setup presenter dependencies") {
+                expect(presenter?.event).toNot(beNil())
+            }
         }
     }
 }
