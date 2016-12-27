@@ -11,7 +11,13 @@ class EventDetailsPresenter: EventDetailsModuleInput, EventDetailsViewOutput, Ev
     weak var view: EventDetailsViewInput!
     var interactor: EventDetailsInteractorInput!
     var router: EventDetailsRouterInput!
+    
+    var event: GithubEvent!
 
+    func setup(event: GithubEvent) {
+        self.event = event
+    }
+    
     func viewIsReady() {
 
     }

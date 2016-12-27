@@ -8,4 +8,5 @@
 
 protocol EventDetailsModuleInput: class {
 
+    func setup(event: GithubEvent)
 }
