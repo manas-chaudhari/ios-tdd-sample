@@ -18,7 +18,8 @@ class EventDetailsModuleConfiguratorTests: QuickSpec {
             
             beforeEach {
                 viewController = EventDetailsViewController()
-                configurator = EventDetailsModuleConfigurator()
+                let dummyEvent = GithubEvent(id: 1, type: "T1")
+                configurator = EventDetailsModuleConfigurator(event: dummyEvent)
                 configurator.configure(viewController: viewController)
             }
             

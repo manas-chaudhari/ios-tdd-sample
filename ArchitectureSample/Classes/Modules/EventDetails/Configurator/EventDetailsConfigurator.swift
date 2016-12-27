@@ -9,6 +9,14 @@
 import UIKit
 
 class EventDetailsModuleConfigurator {
+    
+    private let configuration: (EventDetailsModuleInput) -> ()
+    
+    init(event: GithubEvent) {
+        configuration = { input in
+            input.setup(event: event)
+        }
+    }
 
     func configure(viewController: EventDetailsViewController) {
 
@@ -23,6 +31,8 @@ class EventDetailsModuleConfigurator {
 
         presenter.interactor = interactor
         viewController.output = presenter
+        
+        configuration(presenter)
     }
 
 }
