@@ -6,18 +6,20 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
 
-class {{ module_info.name }}ViewTests: XCTestCase {
+class {{ module_info.name }}ViewTests: QuickSpec {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func spec() {
+
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    class Mock{{ module_info.name }}ViewOutput: {{ module_info.name }}ViewOutput {
+
+        func viewIsReady() {
+
+        }
     }
 
 }

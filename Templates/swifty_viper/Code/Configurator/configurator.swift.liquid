@@ -10,14 +10,14 @@ import UIKit
 
 class {{ module_info.name }}ModuleConfigurator {
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
+    private let configuration: ({{ module_info.name }}ModuleInput) -> ()
 
-        if let viewController = viewInput as? {{ module_info.name }}ViewController {
-            configure(viewController: viewController)
+    init() {
+        configuration = { input in
         }
     }
 
-    private func configure(viewController: {{ module_info.name }}ViewController) {
+    func configure(viewController: {{ module_info.name }}ViewController) {
 
         let router = {{ module_info.name }}Router()
 
@@ -30,6 +30,8 @@ class {{ module_info.name }}ModuleConfigurator {
 
         presenter.interactor = interactor
         viewController.output = presenter
+
+        configuration(presenter)
     }
 
 }

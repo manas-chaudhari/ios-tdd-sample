@@ -28,7 +28,6 @@ code_files:
 
 # Configurator
 - {name: Configurator/Configurator.swift, path: Code/Configurator/configurator.swift.liquid}
-- {name: Configurator/Initializer.swift, path: Code/Configurator/initializer.swift.liquid}
 
 # The declarations for test files
 test_files:

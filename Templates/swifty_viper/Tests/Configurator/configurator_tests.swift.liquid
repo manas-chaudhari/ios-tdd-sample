@@ -6,48 +6,43 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
 
-class {{ module_info.name }}ModuleConfiguratorTests: XCTestCase {
+class {{ module_info.name }}ModuleConfiguratorTests: QuickSpec {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    override func spec() {
+        describe("configure") {
+            var viewController: {{ module_info.name }}ViewController!
+            var configurator: {{ module_info.name }}ModuleConfigurator!
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+            beforeEach {
+                viewController = {{ module_info.name }}ViewController()
+                configurator = {{ module_info.name }}ModuleConfigurator()
+                configurator.configure(viewController: viewController)
+            }
 
-    func testConfigureModuleForViewController() {
+            var presenter: {{ module_info.name }}Presenter? {
+                return viewController.output as? {{ module_info.name }}Presenter
+            }
 
-        //given
-        let viewController = {{ module_info.name }}ViewControllerMock()
-        let configurator = {{ module_info.name }}ModuleConfigurator()
+            var router: {{ module_info.name }}Router? {
+                return presenter?.router as? {{ module_info.name }}Router
+            }
 
-        //when
-        configurator.configureModuleForViewInput(viewInput: viewController)
+            var interactor: {{ module_info.name }}Interactor? {
+                return presenter?.interactor as? {{ module_info.name }}Interactor
+            }
 
-        //then
-        XCTAssertNotNil(viewController.output, "{{ module_info.name }}ViewController is nil after configuration")
-        XCTAssertTrue(viewController.output is {{ module_info.name }}Presenter, "output is not {{ module_info.name }}Presenter")
+            it("should setup VIPER dependencies") {
+                expect(presenter).toNot(beNil())
+                expect(presenter?.view).toNot(beNil())
 
-        let presenter: {{ module_info.name }}Presenter = viewController.output as! {{ module_info.name }}Presenter
-        XCTAssertNotNil(presenter.view, "view in {{ module_info.name }}Presenter is nil after configuration")
-        XCTAssertNotNil(presenter.router, "router in {{ module_info.name }}Presenter is nil after configuration")
-        XCTAssertTrue(presenter.router is {{ module_info.name }}Router, "router is not {{ module_info.name }}Router")
+                expect(router).toNot(beNil())
 
-        let interactor: {{ module_info.name }}Interactor = presenter.interactor as! {{ module_info.name }}Interactor
-        XCTAssertNotNil(interactor.output, "output in {{ module_info.name }}Interactor is nil after configuration")
-    }
-
-    class {{ module_info.name }}ViewControllerMock: {{ module_info.name }}ViewController {
-
-        var setupInitialStateDidCall = false
-
-        override func setupInitialState() {
-            setupInitialStateDidCall = true
+                expect(interactor).toNot(beNil())
+                expect(interactor?.output).toNot(beNil())
+            }
         }
     }
 }
