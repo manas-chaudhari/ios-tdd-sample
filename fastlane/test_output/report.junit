@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ArchitectureSampleTests.xctest' tests='37' failures='0'>
+  <testsuite name='ArchitectureSampleTests.ArchitectureSampleTests' tests='2' failures='0'>
+    <testcase classname='ArchitectureSampleTests.ArchitectureSampleTests' name='testExample' time='0.002'/>
+    <testcase classname='ArchitectureSampleTests.ArchitectureSampleTests' name='testPerformanceExample' time='0.439'/>
+  </testsuite>
+  <testsuite name='ArchitectureSampleTests.EventDetailsModuleConfiguratorTests' tests='2' failures='0'>
+    <testcase classname='ArchitectureSampleTests.EventDetailsModuleConfiguratorTests' name='configure__should_setup_all_dependencies' time='0.005'/>
+    <testcase classname='ArchitectureSampleTests.EventDetailsModuleConfiguratorTests' name='configure__should_setup_presenter_dependencies' time='0.002'/>
+  </testsuite>
+  <testsuite name='ArchitectureSampleTests.EventDetailsPresenterTest' tests='1' failures='0'>
+    <testcase classname='ArchitectureSampleTests.EventDetailsPresenterTest' name='setup__should_store_event' time='0.002'/>
+  </testsuite>
+  <testsuite name='ArchitectureSampleTests.GithubEventsInteractorTests' tests='4' failures='0'>
+    <testcase classname='ArchitectureSampleTests.GithubEventsInteractorTests' name='while_fetching_events__with_service_response_of_2_events__outputs_the_same_2_events' time='0.004'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsInteractorTests' name='while_fetching_events__with_service_response_of_2_events__does_not_output_error' time='0.002'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsInteractorTests' name='while_fetching_events__with_service_response_of_error__outputs_the_error' time='0.002'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsInteractorTests' name='while_fetching_events__with_service_response_of_error__does_not_output_any_events' time='0.002'/>
+  </testsuite>
+  <testsuite name='ArchitectureSampleTests.GithubEventsModuleConfiguratorTest' tests='2' failures='0'>
+    <testcase classname='ArchitectureSampleTests.GithubEventsModuleConfiguratorTest' name='configure__should_setup_all_dependencies' time='0.003'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsModuleConfiguratorTest' name='configure__should_setup_router_dependencies' time='0.003'/>
+  </testsuite>
+  <testsuite name='ArchitectureSampleTests.GithubEventsPresenterSpec' tests='7' failures='0'>
+    <testcase classname='ArchitectureSampleTests.GithubEventsPresenterSpec' name='when_view_is_ready__should_fetch_events' time='0.002'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsPresenterSpec' name='when_view_is_ready__should_show_loader' time='0.002'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsPresenterSpec' name='after_successful_loading__should_display_events' time='0.002'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsPresenterSpec' name='after_successful_loading__on_row_selection__should_navigate_to_repository_page' time='0.001'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsPresenterSpec' name='on_loading_error__should_display_error' time='0.002'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsPresenterSpec' name='on_retry__should_fetch_events' time='0.002'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsPresenterSpec' name='on_retry__should_show_loader' time='0.005'/>
+  </testsuite>
+  <testsuite name='ArchitectureSampleTests.GithubEventsViewTests' tests='15' failures='0'>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='Outlets__tableView_should_be_connected' time='0.037'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='Outlets__errorView_should_be_connected' time='0.008'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='Outlets__loaderView_should_be_connected' time='0.006'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='Outlets__retryButton_should_be_connected' time='0.006'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Output__viewIsReady_should_be_called' time='0.005'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Output__retryClicked_should_be_called' time='0.033'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Output__didSelectRow__should_be_called_when_tableview_cell_is_selected' time='0.034'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Inputs__error_should_be_visible' time='0.013'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Inputs__loader_should_be_visible' time='0.005'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Inputs__showEvents__table_should_be_visible' time='0.006'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Inputs__showEvents__numberOfSections__should_be_1' time='0.006'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Inputs__showEvents__numberOfRows__should_be_equal_to_events_count' time='0.023'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Inputs__showEvents__numberOfRows__should_be_equal_to_events_count_0_' time='0.007'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Inputs__showEvents__tableView_cell__should_be_of_type_GithubEventCell' time='0.015'/>
+    <testcase classname='ArchitectureSampleTests.GithubEventsViewTests' name='View_Inputs__showEvents__tableView_cell__GithubEventCell__should_display_GithubEvent_s_type' time='0.012'/>
+  </testsuite>
+  <testsuite name='ArchitectureSampleTests.GithubServiceSpec' tests='4' failures='0'>
+    <testcase classname='ArchitectureSampleTests.GithubServiceSpec' name='GithubEvent__is_equal_to_another_with_same_values' time='0.002'/>
+    <testcase classname='ArchitectureSampleTests.GithubServiceSpec' name='GithubEvent__is_not_equal_to_another_with_different_values' time='0.017'/>
+    <testcase classname='ArchitectureSampleTests.GithubServiceSpec' name='GithubService__fetchEvents__should_parse_sample_events' time='0.016'/>
+    <testcase classname='ArchitectureSampleTests.GithubServiceSpec' name='GithubService__fetchEvents__should_return_error_on_failure' time='0.003'/>
+  </testsuite>
+</testsuites>

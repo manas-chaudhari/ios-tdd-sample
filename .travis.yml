@@ -1,0 +1,8 @@
+language: objective-c
+cache: cocoapods
+osx_image: xcode8.1
+
+before_install:
+  - gem update fastlane --no-ri --no-rdoc --no-document
+
+script: travis/script.sh
