@@ -1,0 +1,17 @@
+# More documentation about how to customize your build
+# can be found here:
+# https://docs.fastlane.tools
+fastlane_version "1.109.0"
+
+# This value helps us track success metrics for Fastfiles
+# we automatically generate. Feel free to remove this line
+# once you get things running smoothly!
+generated_fastfile_id "8e8cbb25-6cd1-41f7-96a4-1b3e9750e30a"
+
+default_platform :ios
+
+platform :ios do
+  lane :test do
+    scan(scheme: 'ArchitectureSample')
+  end
+end
