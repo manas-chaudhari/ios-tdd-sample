@@ -6,8 +6,8 @@ target 'ArchitectureSample' do
   use_frameworks!
 
   # Pods for ArchitectureSample
-  pod 'Moya', '8.0.0-beta.5'
   pod 'Moya-ObjectMapper', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
+  # pod 'Moya', '= 8.0.0-beta.6'
 
   target 'ArchitectureSampleTests' do
     inherit! :search_paths
