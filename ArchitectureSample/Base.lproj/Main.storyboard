@@ -51,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xwW-cV-rCN" id="VW8-fp-9AS">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWe-PZ-Oud">
@@ -91,7 +91,7 @@
                         <outlet property="loaderView" destination="6Pj-Oh-5Vc" id="DNe-dV-6Jw"/>
                         <outlet property="retryButton" destination="vhZ-1i-zyl" id="H8S-Br-Y1H"/>
                         <outlet property="tableView" destination="e6x-MI-dxS" id="3PH-Hg-e0S"/>
-                        <segue destination="6gP-cz-hdI" kind="showDetail" id="osF-Pm-Gp6"/>
+                        <segue destination="6gP-cz-hdI" kind="showDetail" identifier="show" id="osF-Pm-Gp6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
