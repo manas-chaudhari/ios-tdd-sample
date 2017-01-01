@@ -2,6 +2,7 @@ language: objective-c
 osx_image: xcode8.1
 
 before_install:
+  - pod update Moya
   - pod install
   - gem update fastlane --no-ri --no-rdoc --no-document
 
