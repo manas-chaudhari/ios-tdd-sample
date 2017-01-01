@@ -11,7 +11,11 @@ generated_fastfile_id "8e8cbb25-6cd1-41f7-96a4-1b3e9750e30a"
 default_platform :ios
 
 platform :ios do
+  before_all do
+    ensure_git_status_clean
+  end
+  
   lane :test do
-    scan(scheme: 'ArchitectureSample')
+    scan(scheme: 'ArchitectureSample', clean: true)
   end
 end
