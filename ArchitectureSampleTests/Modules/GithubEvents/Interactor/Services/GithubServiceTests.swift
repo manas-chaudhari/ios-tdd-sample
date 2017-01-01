@@ -65,7 +65,7 @@ class GithubServiceSpec: QuickSpec {
                 it("should return error on failure") {
                     let fakeError = NSError(domain: "Network", code: 400, userInfo: nil)
                     let githubService = GithubService(provider: MoyaProvider<GithubApi>(endpointClosure: { target in
-                        let endpoint = MoyaProvider.defaultEndpointMapping(target)
+                        let endpoint = MoyaProvider.defaultEndpointMapping(for: target)
                         return Endpoint(url: endpoint.url, sampleResponseClosure: { .networkError(fakeError) })
                     }, stubClosure: MoyaProvider.immediatelyStub))
                     
