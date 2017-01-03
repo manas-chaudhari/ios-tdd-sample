@@ -25,15 +25,15 @@ class EventDetailsPresenterTest: QuickSpec {
 
         }
     }
-    
+
     override func spec() {
         describe("setup") {
             it("should store event") {
                 let sut = EventDetailsPresenter()
                 let dummyEvent = GithubEvent(id: 1, type: "")
-                
+
                 sut.setup(event: dummyEvent)
-                
+
                 expect(sut.event).to(equal(dummyEvent))
             }
         }

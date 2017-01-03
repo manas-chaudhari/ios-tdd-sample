@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 
 struct JSONTransforms {
-    
+
     static let stringToInt = TransformOf<Int, String>(fromJSON: { Int($0!) }, toJSON: { $0.map { String($0) } })
 
 }

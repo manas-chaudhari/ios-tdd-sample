@@ -10,7 +10,7 @@ class GithubEventsInteractor: GithubEventsInteractorInput {
 
     weak var output: GithubEventsInteractorOutput!
     let githubService: GithubServiceType
-    
+
     init(githubService: GithubServiceType) {
         self.githubService = githubService
     }
@@ -20,7 +20,7 @@ class GithubEventsInteractor: GithubEventsInteractorInput {
             switch result {
             case .success(let events):
                 self.output.foundEvents(events: events)
-                
+
             case .failure(_):
                 self.output.errorInFetchEvents()
             }

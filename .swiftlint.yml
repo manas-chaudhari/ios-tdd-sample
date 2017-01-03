@@ -1,9 +1,6 @@
 excluded:
   - Pods
 
-trailing_whitespace:
-  ignores_empty_lines: true
-
 variable_name:
   excluded:
     - id

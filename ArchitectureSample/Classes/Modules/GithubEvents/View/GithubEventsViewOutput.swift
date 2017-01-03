@@ -14,8 +14,8 @@ protocol GithubEventsViewOutput {
     */
 
     func viewIsReady()
-    
+
     func retryClicked()
-    
+
     func didSelectRow(at position: Int)
 }

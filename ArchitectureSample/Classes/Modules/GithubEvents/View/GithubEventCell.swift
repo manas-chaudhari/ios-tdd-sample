@@ -9,7 +9,7 @@
 import UIKit
 
 class GithubEventCell: UITableViewCell {
-    
+
     @IBOutlet weak var typeLabel: UILabel!
 
     override func awakeFromNib() {
@@ -22,7 +22,7 @@ class GithubEventCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func configure(forEvent event: GithubEvent) {
         self.typeLabel.text = "Type: " + event.type
     }

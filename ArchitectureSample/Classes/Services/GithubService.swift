@@ -18,11 +18,11 @@ protocol GithubServiceType {
 
 class GithubService: GithubServiceType {
     let provider: MoyaProvider<GithubApi>
-    
+
     init(provider: MoyaProvider<GithubApi>) {
         self.provider = provider
     }
-    
+
     func events(completion: @escaping (Result<[GithubEvent], Moya.Error>) -> Void) {
         provider.request(.events) { result in
             switch result {
@@ -30,11 +30,11 @@ class GithubService: GithubServiceType {
                 if let events = try? response.mapArray(GithubEvent.self) {
                     completion(.success(events))
                 }
-                
+
             case .failure(let error):
                 completion(.failure(error))
             }
         }
-        
+
     }
 }

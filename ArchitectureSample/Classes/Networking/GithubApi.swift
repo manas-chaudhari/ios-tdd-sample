@@ -16,7 +16,7 @@ enum GithubApi {
 extension GithubApi: TargetType {
 
     public var baseURL: URL { return URL(string: "https://api.github.com")! }
-    
+
     public var path: String {
         switch self {
         case .events:
@@ -33,7 +33,7 @@ extension GithubApi: TargetType {
     public var task: Task {
         return .request
     }
-    
+
     public var sampleData: Data {
         switch self {
         case .events:
@@ -48,7 +48,7 @@ private extension String {
     var urlEscaped: String {
         return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
-    
+
     var utf8Encoded: Data {
         return self.data(using: .utf8)!
     }
