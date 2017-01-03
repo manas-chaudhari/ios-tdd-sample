@@ -10,7 +10,7 @@ import UIKit
 
 class {{ module_info.name }}ModuleConfigurator {
 
-    private let configuration: ({{ module_info.name }}ModuleInput) -> ()
+    private let configuration: ({{ module_info.name }}ModuleInput) -> Void
 
     init() {
         configuration = { input in

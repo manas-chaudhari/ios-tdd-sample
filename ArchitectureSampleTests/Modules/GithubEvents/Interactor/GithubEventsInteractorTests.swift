@@ -80,7 +80,7 @@ class GithubEventsInteractorTests: QuickSpec {
     class MockGithubService: GithubServiceType {
         var stubResult: Result<[GithubEvent], Moya.Error>!
         
-        func events(completion: @escaping (Result<[GithubEvent], Moya.Error>) -> ()) {
+        func events(completion: @escaping (Result<[GithubEvent], Moya.Error>) -> Void) {
             completion(stubResult)
         }
     }

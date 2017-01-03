@@ -18,7 +18,6 @@ class EventDetailsViewController: UIViewController, EventDetailsViewInput {
         output.viewIsReady()
     }
 
-
     // MARK: EventDetailsViewInput
     func setupInitialState() {
     }

@@ -13,7 +13,7 @@ struct GithubEvent: Equatable {
     var id: Int!
     var type: String!
     
-    public static func ==(lhs: GithubEvent, rhs: GithubEvent) -> Bool {
+    public static func == (lhs: GithubEvent, rhs: GithubEvent) -> Bool {
         return lhs.id == rhs.id &&
             lhs.type == rhs.type
     }
@@ -28,6 +28,5 @@ extension GithubEvent: Mappable {
         id <- (map["id"], JSONTransforms.stringToInt)
         type <- map["type"]
     }
-    
     
 }

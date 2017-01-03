@@ -13,7 +13,7 @@ import ObjectMapper
 import Moya_ObjectMapper
 
 protocol GithubServiceType {
-    func events(completion: @escaping (Result<[GithubEvent], Moya.Error>) -> ())
+    func events(completion: @escaping (Result<[GithubEvent], Moya.Error>) -> Void)
 }
 
 class GithubService: GithubServiceType {
@@ -23,7 +23,7 @@ class GithubService: GithubServiceType {
         self.provider = provider
     }
     
-    func events(completion: @escaping (Result<[GithubEvent], Moya.Error>) -> ()) {
+    func events(completion: @escaping (Result<[GithubEvent], Moya.Error>) -> Void) {
         provider.request(.events) { result in
             switch result {
             case .success(let response):

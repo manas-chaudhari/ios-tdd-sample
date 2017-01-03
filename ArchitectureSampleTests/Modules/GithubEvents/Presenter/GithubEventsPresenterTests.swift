@@ -18,7 +18,6 @@ class GithubEventsPresenterSpec: QuickSpec {
             fetchEventsCallCount += 1
         }
 
-
     }
 
     class MockRouter: GithubEventsRouterInput {

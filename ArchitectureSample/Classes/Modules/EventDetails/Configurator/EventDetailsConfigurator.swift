@@ -10,7 +10,7 @@ import UIKit
 
 class EventDetailsModuleConfigurator {
 
-    private let configuration: (EventDetailsModuleInput) -> ()
+    private let configuration: (EventDetailsModuleInput) -> Void
 
     init(event: GithubEvent) {
         configuration = { input in

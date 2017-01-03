@@ -21,7 +21,7 @@ class GithubServiceSpec: QuickSpec {
             it("is equal to another with same values") {
                 let equalPairs = [
                     (GithubEvent(id: 1, type: T1), GithubEvent(id: 1, type: T1)),
-                    (GithubEvent(id: 3, type: T2), GithubEvent(id: 3, type: T2)),
+                    (GithubEvent(id: 3, type: T2), GithubEvent(id: 3, type: T2))
                 ]
                 
                 equalPairs.forEach { pair in
@@ -33,7 +33,7 @@ class GithubServiceSpec: QuickSpec {
                 let unEqualPairs = [
                     (GithubEvent(id: 1, type: T1), GithubEvent(id: 2, type: T1)),
                     (GithubEvent(id: 3, type: T1), GithubEvent(id: 3, type: T2)),
-                    (GithubEvent(id: 5, type: T1), GithubEvent(id: 10, type: T2)),
+                    (GithubEvent(id: 5, type: T1), GithubEvent(id: 10, type: T2))
                 ]
                 
                 unEqualPairs.forEach { pair in
@@ -46,7 +46,8 @@ class GithubServiceSpec: QuickSpec {
             describe("fetchEvents") {
                 
                 it("should parse sample events") {
-                    let githubService = GithubService(provider: MoyaProvider<GithubApi>(stubClosure: MoyaProvider.immediatelyStub))
+                    let githubService = GithubService(
+                        provider: MoyaProvider<GithubApi>(stubClosure: MoyaProvider.immediatelyStub))
                     
                     let sampleEvents = [
                         GithubEvent(id: 1, type: "WatchEvent"),
