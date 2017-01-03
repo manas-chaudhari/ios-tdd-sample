@@ -1,0 +1,5 @@
+disabled_rules:
+  - function_body_length
+
+trailing_whitespace:
+  ignores_empty_lines: true

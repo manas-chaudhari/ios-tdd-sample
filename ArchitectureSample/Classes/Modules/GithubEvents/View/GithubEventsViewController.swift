@@ -27,7 +27,6 @@ class GithubEventsViewController: UIViewController, GithubEventsViewInput {
         tableView.delegate = self
     }
 
-
     // MARK: GithubEventsViewInput
     func setupInitialState() {
     }
@@ -67,11 +66,11 @@ extension GithubEventsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "Event Cell", for: indexPath)
-            as! GithubEventCell
+            as? GithubEventCell
         
-        cell.configure(forEvent: events[indexPath.row])
+        cell!.configure(forEvent: events[indexPath.row])
         
-        return cell
+        return cell!
     }
 }
 

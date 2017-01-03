@@ -16,7 +16,8 @@ class GithubEventsViewTests: QuickSpec {
         
         beforeEach {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GithubEventsViewController.self))
-            sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController") as! GithubEventsViewController
+            sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController")
+                as? GithubEventsViewController
             
             mockOutput = MockGithubEventsViewOutput()
             sut.output = mockOutput
@@ -138,7 +139,7 @@ class GithubEventsViewTests: QuickSpec {
                         
                         beforeEach {
                             cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0))
-                                as! GithubEventCell
+                                as? GithubEventCell
                         }
                         
                         it("should display GithubEvent's type") {
