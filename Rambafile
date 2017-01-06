@@ -7,7 +7,7 @@ xcodeproj_path: ArchitectureSample.xcodeproj
 
 ### Code generation settings section
 # The main project target name
-project_targets: [ArchitectureSample, ArchitectureSampleTests]
+project_target: ArchitectureSample
 
 # The file path for new modules
 project_file_path: ArchitectureSample/Classes/Modules
