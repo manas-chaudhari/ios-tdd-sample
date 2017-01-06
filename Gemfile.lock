@@ -32,6 +32,9 @@ GEM
       kramdown (~> 1.5)
       octokit (~> 4.2)
       terminal-table (~> 1)
+    danger-xcov (0.2.2)
+      danger (>= 2.1)
+      xcov (>= 0.9)
     domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.1.1)
@@ -174,6 +177,7 @@ PLATFORMS
 
 DEPENDENCIES
   danger
+  danger-xcov
   fastlane
   xcov
 
