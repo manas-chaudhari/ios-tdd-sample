@@ -8,6 +8,8 @@
 
 import Quick
 import Nimble
+@testable
+import ArchitectureSample
 
 class GithubEventsPresenterSpec: QuickSpec {
 

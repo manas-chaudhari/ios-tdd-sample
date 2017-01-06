@@ -11,6 +11,8 @@ import Quick
 import Nimble
 import Moya
 import Result
+@testable
+import ArchitectureSample
 
 class GithubServiceSpec: QuickSpec {
     override func spec() {

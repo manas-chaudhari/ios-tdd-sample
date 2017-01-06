@@ -7,6 +7,8 @@
 //
 
 import XCTest
+@testable
+import ArchitectureSample
 
 class EventDetailsInteractorTests: XCTestCase {
 

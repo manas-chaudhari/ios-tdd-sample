@@ -8,6 +8,8 @@
 
 import Quick
 import Nimble
+@testable
+import ArchitectureSample
 
 class GithubEventsViewTests: QuickSpec {
     override func spec() {
@@ -15,7 +17,7 @@ class GithubEventsViewTests: QuickSpec {
         var mockOutput: MockGithubEventsViewOutput!
 
         beforeEach {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: GithubEventsViewController.self))
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             sut = storyboard.instantiateViewController(withIdentifier: "GithubEventsViewController")
                 as? GithubEventsViewController
 

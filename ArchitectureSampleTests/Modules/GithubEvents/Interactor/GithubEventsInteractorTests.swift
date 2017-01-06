@@ -11,6 +11,8 @@ import Moya
 import Result
 import Quick
 import Nimble
+@testable
+import ArchitectureSample
 
 class GithubEventsInteractorTests: QuickSpec {
 
