@@ -27,7 +27,7 @@ extension GithubApi: TargetType {
     public var method: Moya.Method { return .get }
 
     public var parameters: [String : Any]? {
-        return nil
+        return ["test": "yoyo"]
     }
 
     public var task: Task {

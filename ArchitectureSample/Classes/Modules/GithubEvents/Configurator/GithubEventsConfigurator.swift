@@ -29,7 +29,7 @@ class GithubEventsModuleConfigurator {
         presenter.view = viewController
         presenter.router = router
 
-        let provider = MoyaProvider<GithubApi>()
+        let provider = MoyaProvider<GithubApi>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
         let interactor = GithubEventsInteractor(githubService: GithubService(provider: provider))
         interactor.output = presenter
